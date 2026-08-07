@@ -1,0 +1,1173 @@
+/* ==========================================================================
+   KOLKATA FOOD CHRONICLES - DESIGN SYSTEM & STYLESHEET
+   Niche: Kolkata Food Enthusiast (Restaurant Exploration & Home Cooking)
+   Color System: 60% Cream (#FFFDF9), 30% Deep Burgundy (#4A1521), 10% Terracotta (#E05A47)
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. GOOGLE FONTS & CSS VARIABLES
+   -------------------------------------------------------------------------- */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;0,800;1,600&family=Open+Sans:ital,wght@0,400;0,600;0,700;1,400&display=swap');
+
+:root {
+  /* 60-30-10 Palette Allocation */
+  --bg-primary: #FFFDF9;            /* 60% Dominant Neutral: Cream */
+  --bg-secondary: #F7F0E6;          /* Cream Tint */
+  --brand-burgundy: #4A1521;        /* 30% Secondary: Deep Wine Red */
+  --brand-burgundy-dark: #320C15;
+  --brand-burgundy-light: #682231;
+  --accent-terracotta: #E05A47;     /* 10% Accent: Burnt Spice */
+  --accent-terracotta-hover: #C84634;
+  --accent-terracotta-soft: rgba(224, 90, 71, 0.12);
+  --text-espresso: #2C1E21;         /* Text Neutral */
+  --text-muted: #6B5B5E;
+  --border-sand: #E3D7C7;
+  --border-sand-light: #F0E6D8;
+  
+  /* Status & Accents */
+  --success-green: #2E7D32;
+  --success-green-soft: #E8F5E9;
+  --gold-star: #F59E0B;
+  --card-bg: #FFFFFF;
+
+  /* Typography Tokens */
+  --font-heading: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-body: 'Open Sans', system-ui, -apple-system, sans-serif;
+  
+  /* Fluid Type Scale */
+  --fs-hero: clamp(2.25rem, 4.5vw, 3.5rem);
+  --fs-h1: clamp(1.85rem, 3.5vw, 2.5rem);
+  --fs-h2: clamp(1.45rem, 2.5vw, 1.85rem);
+  --fs-h3: clamp(1.15rem, 1.8vw, 1.35rem);
+  --fs-body: clamp(0.95rem, 1.1vw, 1.05rem);
+  --fs-small: 0.875rem;
+  --fs-tiny: 0.75rem;
+
+  --lh-heading: 1.25;
+  --lh-body: 1.65;
+
+  /* Elevation & Glassmorphism */
+  --shadow-sm: 0 2px 8px rgba(74, 21, 33, 0.05);
+  --shadow-md: 0 6px 20px rgba(74, 21, 33, 0.09);
+  --shadow-lg: 0 14px 36px rgba(74, 21, 33, 0.14);
+  --shadow-hover: 0 12px 28px rgba(224, 90, 71, 0.2);
+  
+  --glass-header: rgba(74, 21, 33, 0.96);
+  --glass-blur: blur(10px);
+  
+  /* Radii & Transitions */
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 20px;
+  --radius-pill: 9999px;
+  --transition-fast: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-smooth: 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* --------------------------------------------------------------------------
+   2. GLOBAL RESET & BASE STYLES
+   -------------------------------------------------------------------------- */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-espresso);
+  font-family: var(--font-body);
+  font-size: var(--fs-body);
+  line-height: var(--lh-body);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  color: var(--brand-burgundy);
+  line-height: var(--lh-heading);
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+h1 { font-size: var(--fs-h1); }
+h2 { font-size: var(--fs-h2); }
+h3 { font-size: var(--fs-h3); }
+
+p {
+  margin-bottom: 1rem;
+}
+
+p:last-child {
+  margin-bottom: 0;
+}
+
+a {
+  color: var(--brand-burgundy);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+a:hover {
+  color: var(--accent-terracotta);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+button, input, select, textarea {
+  font: inherit;
+}
+
+/* Container Utility */
+.container {
+  width: 100%;
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* --------------------------------------------------------------------------
+   3. GLOBAL HEADER & NAVIGATION
+   -------------------------------------------------------------------------- */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background-color: var(--glass-header);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border-bottom: 2px solid var(--accent-terracotta);
+  box-shadow: var(--shadow-md);
+  transition: all var(--transition-smooth);
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 76px;
+}
+
+/* Brand Logo */
+.brand-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  text-decoration: none;
+}
+
+.logo-icon {
+  width: 42px;
+  height: 42px;
+  background: linear-gradient(135deg, var(--accent-terracotta), #F38171);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #FFF;
+  font-size: 1.25rem;
+  box-shadow: 0 4px 10px rgba(224, 90, 71, 0.4);
+}
+
+.logo-text-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.logo-title {
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: 1.2rem;
+  color: #FFFDF9;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+.logo-title span {
+  color: var(--accent-terracotta);
+}
+
+.logo-subtitle {
+  font-size: 0.7rem;
+  color: #EADECF;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+/* Desktop Nav Items */
+.main-nav {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.nav-link {
+  color: #F7F0E6;
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 0.9rem;
+  padding: 0.5rem 0.85rem;
+  border-radius: var(--radius-pill);
+  transition: all var(--transition-fast);
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.nav-link:hover {
+  color: #FFF;
+  background-color: rgba(255, 255, 255, 0.12);
+}
+
+.nav-link.active {
+  color: #FFF;
+  background-color: var(--accent-terracotta);
+  box-shadow: 0 2px 10px rgba(224, 90, 71, 0.4);
+}
+
+/* Header Action Buttons */
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.btn-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.08);
+  color: #FFFDF9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.btn-icon:hover {
+  background: var(--accent-terracotta);
+  border-color: var(--accent-terracotta);
+  transform: scale(1.05);
+}
+
+/* Mobile Hamburger Toggle */
+.mobile-nav-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: #FFF;
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 0.25rem;
+}
+
+/* Off-Canvas Mobile Drawer */
+.mobile-drawer {
+  position: fixed;
+  top: 76px;
+  right: -100%;
+  width: 100%;
+  max-width: 320px;
+  height: calc(100vh - 76px);
+  background-color: var(--brand-burgundy-dark);
+  border-left: 2px solid var(--accent-terracotta);
+  padding: 2rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  z-index: 999;
+  transition: right var(--transition-smooth);
+  box-shadow: var(--shadow-lg);
+}
+
+.mobile-drawer.open {
+  right: 0;
+}
+
+.mobile-nav-link {
+  color: #FFFDF9;
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 1.1rem;
+  padding: 0.75rem 1rem;
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.mobile-nav-link.active {
+  background: var(--accent-terracotta);
+  border-bottom: none;
+}
+
+/* --------------------------------------------------------------------------
+   4. BUTTONS & UI COMPONENTS
+   -------------------------------------------------------------------------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 0.95rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--radius-pill);
+  border: none;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  text-decoration: none;
+}
+
+.btn-primary {
+  background-color: var(--accent-terracotta);
+  color: #FFFFFF !important;
+  box-shadow: 0 4px 14px rgba(224, 90, 71, 0.35);
+}
+
+.btn-primary:hover {
+  background-color: var(--accent-terracotta-hover);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-hover);
+}
+
+.btn-secondary {
+  background-color: var(--brand-burgundy);
+  color: #FFFFFF !important;
+  box-shadow: var(--shadow-sm);
+}
+
+.btn-secondary:hover {
+  background-color: var(--brand-burgundy-light);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.btn-outline {
+  background-color: transparent;
+  color: var(--brand-burgundy);
+  border: 2px solid var(--brand-burgundy);
+}
+
+.btn-outline:hover {
+  background-color: var(--brand-burgundy);
+  color: #FFFFFF !important;
+}
+
+.btn-sm {
+  padding: 0.45rem 1rem;
+  font-size: 0.85rem;
+}
+
+/* Badges */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0.3rem 0.75rem;
+  border-radius: var(--radius-pill);
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.badge-terracotta {
+  background-color: var(--accent-terracotta);
+  color: #FFF;
+}
+
+.badge-burgundy {
+  background-color: var(--brand-burgundy);
+  color: #FFF;
+}
+
+.badge-cream {
+  background-color: var(--bg-secondary);
+  color: var(--brand-burgundy);
+  border: 1px solid var(--border-sand);
+}
+
+.badge-green {
+  background-color: var(--success-green-soft);
+  color: var(--success-green);
+}
+
+/* Star Rating Badge */
+.star-rating {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.2rem;
+  color: var(--gold-star);
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+
+/* --------------------------------------------------------------------------
+   5. PAGE CONTAINER & VIEWS ROUTING
+   -------------------------------------------------------------------------- */
+.page-view {
+  display: none;
+  animation: fadeIn 0.4s ease-in-out;
+  padding-bottom: 4rem;
+}
+
+.page-view.active-view {
+  display: block;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Page Section Banners */
+.page-hero {
+  background: linear-gradient(135deg, var(--brand-burgundy), var(--brand-burgundy-dark));
+  color: #FFFDF9;
+  padding: 3.5rem 0;
+  margin-bottom: 2.5rem;
+  position: relative;
+  overflow: hidden;
+  border-bottom: 4px solid var(--accent-terracotta);
+}
+
+.page-hero::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -10%;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(224, 90, 71, 0.25) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.page-hero-title {
+  color: #FFFDF9;
+  font-size: var(--fs-hero);
+  margin-bottom: 0.75rem;
+}
+
+.page-hero-subtitle {
+  font-size: clamp(1rem, 1.5vw, 1.25rem);
+  color: var(--border-sand);
+  max-width: 720px;
+  line-height: 1.5;
+}
+
+/* Filter Bar Utility */
+.filter-bar {
+  background: var(--card-bg);
+  border: 1px solid var(--border-sand);
+  border-radius: var(--radius-md);
+  padding: 1.25rem;
+  margin-bottom: 2.5rem;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.filter-group {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.filter-pill {
+  background-color: var(--bg-primary);
+  color: var(--brand-burgundy);
+  border: 1px solid var(--border-sand);
+  padding: 0.5rem 1.1rem;
+  border-radius: var(--radius-pill);
+  font-family: var(--font-heading);
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.filter-pill:hover, .filter-pill.active {
+  background-color: var(--accent-terracotta);
+  color: #FFF;
+  border-color: var(--accent-terracotta);
+  box-shadow: 0 3px 10px rgba(224, 90, 71, 0.3);
+}
+
+/* Filter Dropdowns */
+.filter-select {
+  padding: 0.5rem 1rem;
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--border-sand);
+  background: #FFF;
+  color: var(--brand-burgundy);
+  font-family: var(--font-heading);
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* --------------------------------------------------------------------------
+   6. PAGE 1: EATS OUT & DINING GUIDE CARDS & MAP
+   -------------------------------------------------------------------------- */
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  gap: 2rem;
+}
+
+.restaurant-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border-sand);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  transition: all var(--transition-smooth);
+  display: flex;
+  flex-direction: column;
+}
+
+.restaurant-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--accent-terracotta-soft);
+}
+
+.card-image-wrap {
+  position: relative;
+  height: 220px;
+  overflow: hidden;
+}
+
+.card-image-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.restaurant-card:hover .card-image-wrap img {
+  transform: scale(1.06);
+}
+
+.card-top-badges {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  right: 12px;
+  display: flex;
+  justify-content: space-between;
+  pointer-events: none;
+}
+
+.card-body {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.card-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.card-title {
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+  color: var(--brand-burgundy);
+}
+
+.must-try-tag {
+  background: var(--bg-secondary);
+  border-left: 3px solid var(--accent-terracotta);
+  padding: 0.4rem 0.75rem;
+  font-size: 0.825rem;
+  margin: 0.75rem 0;
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+}
+
+.card-footer {
+  margin-top: auto;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border-sand-light);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Map Section Canvas */
+.map-canvas-container {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-sand);
+  border-radius: var(--radius-lg);
+  padding: 2.5rem;
+  margin-top: 3.5rem;
+  position: relative;
+  box-shadow: var(--shadow-sm);
+}
+
+.map-interactive-visual {
+  background: #E8DFD3;
+  border-radius: var(--radius-md);
+  height: 320px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  background-image: radial-gradient(var(--border-sand) 1.5px, transparent 1.5px);
+  background-size: 24px 24px;
+}
+
+.map-pin {
+  position: absolute;
+  background: var(--brand-burgundy);
+  color: #FFF;
+  padding: 0.4rem 0.85rem;
+  border-radius: var(--radius-pill);
+  font-family: var(--font-heading);
+  font-size: 0.8rem;
+  font-weight: 700;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.map-pin:hover {
+  background: var(--accent-terracotta);
+  transform: scale(1.1) translateY(-3px);
+}
+
+/* --------------------------------------------------------------------------
+   7. PAGE 2: RECIPES FROM MY KITCHEN
+   -------------------------------------------------------------------------- */
+.recipe-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border-sand);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  transition: all var(--transition-smooth);
+}
+
+.recipe-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lg);
+}
+
+.recipe-stats-strip {
+  display: flex;
+  background: var(--bg-secondary);
+  border-top: 1px solid var(--border-sand-light);
+  border-bottom: 1px solid var(--border-sand-light);
+  padding: 0.6rem 1rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  justify-content: space-around;
+  color: var(--brand-burgundy);
+}
+
+.recipe-accordion-preview {
+  padding: 0.75rem 1.5rem;
+  background: #FFFDF9;
+  border-top: 1px dashed var(--border-sand);
+  font-size: 0.85rem;
+}
+
+/* Recipe Detail Modal */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(44, 30, 33, 0.75);
+  backdrop-filter: blur(6px);
+  z-index: 2000;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+}
+
+.modal-overlay.open {
+  display: flex;
+}
+
+.modal-container {
+  background: var(--bg-primary);
+  border-radius: var(--radius-lg);
+  max-width: 860px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: var(--shadow-lg);
+  border: 2px solid var(--accent-terracotta);
+  position: relative;
+}
+
+.modal-close-btn {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: var(--brand-burgundy);
+  color: #FFF;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+}
+
+.recipe-modal-body {
+  padding: 2.5rem;
+}
+
+.serving-scaler-box {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-sand);
+  padding: 1rem 1.5rem;
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 1.5rem 0;
+}
+
+.scale-btn-group {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.scale-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1px solid var(--brand-burgundy);
+  background: #FFF;
+  color: var(--brand-burgundy);
+  font-weight: 700;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.scale-btn.active, .scale-btn:hover {
+  background: var(--brand-burgundy);
+  color: #FFF;
+}
+
+.checklist-step {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+  padding: 0.75rem;
+  border-radius: var(--radius-sm);
+  transition: background 0.2s;
+}
+
+.checklist-step:hover {
+  background: var(--bg-secondary);
+}
+
+.checklist-step input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  accent-color: var(--accent-terracotta);
+  cursor: pointer;
+  margin-top: 2px;
+}
+
+/* --------------------------------------------------------------------------
+   8. PAGE 3: RECREATE THE MENU (COPYCAT DISHES)
+   -------------------------------------------------------------------------- */
+.compare-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+.compare-card-main {
+  background: var(--card-bg);
+  border: 1px solid var(--border-sand);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+}
+
+.compare-dual-visual {
+  display: grid;
+  grid-template-columns: 1fr 60px 1fr;
+  position: relative;
+}
+
+@media (max-width: 768px) {
+  .compare-dual-visual {
+    grid-template-columns: 1fr;
+  }
+}
+
+.visual-pane {
+  position: relative;
+  height: 280px;
+}
+
+.visual-pane img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.visual-vs-badge {
+  background: var(--brand-burgundy);
+  color: #FFFDF9;
+  font-family: var(--font-heading);
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  z-index: 5;
+  box-shadow: 0 0 12px rgba(0,0,0,0.3);
+}
+
+.visual-pane-label {
+  position: absolute;
+  bottom: 12px;
+  left: 12px;
+  padding: 0.4rem 0.85rem;
+  border-radius: var(--radius-pill);
+  font-family: var(--font-heading);
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #FFF;
+}
+
+.visual-pane-label.rest { background: var(--brand-burgundy); }
+.visual-pane-label.home { background: var(--accent-terracotta); }
+
+.secret-technique-callout {
+  background: linear-gradient(135deg, var(--brand-burgundy), var(--brand-burgundy-dark));
+  color: #FFFDF9;
+  padding: 1.75rem;
+  border-radius: var(--radius-md);
+  margin: 1.5rem 0;
+  border-left: 5px solid var(--accent-terracotta);
+}
+
+.secret-technique-callout h4 {
+  color: var(--accent-terracotta);
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+}
+
+.flavor-radar-bar {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 0.5rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.bar-track {
+  flex-grow: 1;
+  height: 8px;
+  background: var(--border-sand);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.bar-fill {
+  height: 100%;
+  background: var(--accent-terracotta);
+}
+
+/* --------------------------------------------------------------------------
+   9. PAGE 4: FOODIE CITY GUIDES (RANKED LISTS)
+   -------------------------------------------------------------------------- */
+.ranked-item-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border-sand);
+  border-radius: var(--radius-lg);
+  padding: 2rem;
+  margin-bottom: 2rem;
+  box-shadow: var(--shadow-sm);
+  display: grid;
+  grid-template-columns: 80px 1fr 300px;
+  gap: 1.75rem;
+  align-items: center;
+  position: relative;
+}
+
+@media (max-width: 992px) {
+  .ranked-item-card {
+    grid-template-columns: 60px 1fr;
+  }
+  .ranked-card-image {
+    grid-column: 1 / -1;
+    height: 200px;
+  }
+}
+
+.rank-badge {
+  width: 70px;
+  height: 70px;
+  background: linear-gradient(135deg, var(--brand-burgundy), var(--accent-terracotta));
+  color: #FFF;
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: 1.75rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 14px rgba(224, 90, 71, 0.35);
+}
+
+.ranked-card-image img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: var(--radius-md);
+}
+
+/* --------------------------------------------------------------------------
+   10. PAGE 5: PANTRY & GEAR SHOWCASE
+   -------------------------------------------------------------------------- */
+.gear-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border-sand);
+  border-radius: var(--radius-md);
+  padding: 1.75rem;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.pros-cons-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  background: var(--bg-secondary);
+  padding: 1rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.85rem;
+}
+
+.pros-title { color: var(--success-green); font-weight: 700; margin-bottom: 0.25rem; }
+.cons-title { color: var(--accent-terracotta); font-weight: 700; margin-bottom: 0.25rem; }
+
+/* --------------------------------------------------------------------------
+   11. PAGE 6: THE READER'S TABLE (COMMUNITY SUBMISSIONS)
+   -------------------------------------------------------------------------- */
+.community-layout {
+  display: grid;
+  grid-template-columns: 440px 1fr;
+  gap: 2.5rem;
+  align-items: start;
+}
+
+@media (max-width: 992px) {
+  .community-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+.form-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border-sand);
+  border-radius: var(--radius-lg);
+  padding: 2rem;
+  box-shadow: var(--shadow-md);
+  position: sticky;
+  top: 96px;
+}
+
+.form-group {
+  margin-bottom: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.form-group label {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 0.875rem;
+  color: var(--brand-burgundy);
+}
+
+.form-control {
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--border-sand);
+  border-radius: var(--radius-sm);
+  font-size: 0.95rem;
+  background: var(--bg-primary);
+  transition: all var(--transition-fast);
+}
+
+.form-control:focus {
+  outline: none;
+  border-color: var(--accent-terracotta);
+  box-shadow: 0 0 0 3px var(--accent-terracotta-soft);
+}
+
+.star-rating-input {
+  display: flex;
+  gap: 0.35rem;
+  font-size: 1.5rem;
+  color: var(--border-sand);
+  cursor: pointer;
+}
+
+.star-rating-input .star.active {
+  color: var(--gold-star);
+}
+
+.dropzone {
+  border: 2px dashed var(--border-sand);
+  background: var(--bg-secondary);
+  border-radius: var(--radius-sm);
+  padding: 1.5rem;
+  text-align: center;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.dropzone:hover {
+  border-color: var(--accent-terracotta);
+  background: rgba(224, 90, 71, 0.05);
+}
+
+.preview-thumb {
+  max-height: 120px;
+  border-radius: var(--radius-sm);
+  margin-top: 0.75rem;
+  display: none;
+}
+
+/* --------------------------------------------------------------------------
+   12. FOOTER & TOAST NOTIFICATION
+   -------------------------------------------------------------------------- */
+.site-footer {
+  background: var(--brand-burgundy-dark);
+  color: #F7F0E6;
+  padding: 4rem 0 2rem;
+  border-top: 4px solid var(--accent-terracotta);
+  margin-top: 4rem;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1.5fr;
+  gap: 3rem;
+  margin-bottom: 3rem;
+}
+
+@media (max-width: 992px) {
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .footer-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.footer-col h4 {
+  color: #FFFDF9;
+  font-size: 1.1rem;
+  margin-bottom: 1.25rem;
+}
+
+.footer-links {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.footer-links a {
+  color: var(--border-sand);
+  font-size: 0.9rem;
+}
+
+.footer-links a:hover {
+  color: var(--accent-terracotta);
+}
+
+.footer-bottom {
+  text-align: center;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+/* Toast Container */
+.toast-container {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 3000;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.toast {
+  background: var(--brand-burgundy);
+  color: #FFFDF9;
+  padding: 0.85rem 1.5rem;
+  border-radius: var(--radius-pill);
+  box-shadow: var(--shadow-lg);
+  border-left: 4px solid var(--accent-terracotta);
+  font-family: var(--font-heading);
+  font-size: 0.9rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  animation: slideInRight 0.3s ease;
+}
+
+@keyframes slideInRight {
+  from { transform: translateX(100%); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+/* Responsive Media Queries */
+@media (max-width: 960px) {
+  .main-nav { display: none; }
+  .mobile-nav-toggle { display: block; }
+}
