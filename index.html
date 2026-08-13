@@ -65,32 +65,97 @@
     </section>
 
     <div class="container">
-      <!-- Filter Bar -->
-      <div class="filter-bar">
-        <div class="filter-group">
-          <span style="font-weight: 700; color: var(--brand-burgundy); font-size: 0.85rem; margin-right: 0.5rem;">Neighborhood:</span>
-          <button class="filter-pill active" data-filter="all">All Places</button>
-          <button class="filter-pill" data-filter="park-street">Park Street</button>
-          <button class="filter-pill" data-filter="salt-lake">Salt Lake</button>
-          <button class="filter-pill" data-filter="south-kolkata">South Kolkata</button>
-          <button class="filter-pill" data-filter="north-kolkata">North Kolkata</button>
-          <button class="filter-pill" data-filter="new-market">New Market</button>
+      <!-- Discovery Filter Bar (3 Clean Dropdowns) -->
+      <div class="filter-bar discovery-filter-bar">
+        <!-- 1. Places to Visit in Kolkata -->
+        <div class="filter-field">
+          <label for="locationFilter" class="filter-label">Places to Visit in Kolkata</label>
+          <div class="select-wrapper">
+            <select id="locationFilter" class="filter-select">
+              <option value="all">All Places</option>
+              <optgroup label="North Kolkata">
+                <option value="shyambazar">Shyambazar</option>
+                <option value="baghbazar">Baghbazar</option>
+                <option value="hedua">Hedua</option>
+                <option value="sovabazar">Sovabazar</option>
+                <option value="hatibagan">Hatibagan</option>
+                <option value="chitpur">Chitpur</option>
+                <option value="kumartuli">Kumartuli</option>
+                <option value="maniktala">Maniktala</option>
+                <option value="north-kolkata">North Kolkata (All)</option>
+              </optgroup>
+              <optgroup label="Central Kolkata">
+                <option value="park-street">Park Street</option>
+                <option value="new-market">New Market</option>
+                <option value="esplanade">Esplanade</option>
+                <option value="bowbazar">Bowbazar</option>
+                <option value="college-street">College Street</option>
+                <option value="dalhousie">Dalhousie / B.B.D. Bagh</option>
+                <option value="chandni-chowk">Chandni Chowk</option>
+                <option value="central-kolkata">Central Kolkata (All)</option>
+              </optgroup>
+              <optgroup label="South Kolkata">
+                <option value="ballygunge">Ballygunge</option>
+                <option value="gariahat">Gariahat</option>
+                <option value="jadavpur">Jadavpur</option>
+                <option value="dhakuria">Dhakuria</option>
+                <option value="tollygunge">Tollygunge</option>
+                <option value="behala">Behala</option>
+                <option value="thakurpukur">Thakurpukur</option>
+                <option value="kalighat">Kalighat</option>
+                <option value="south-kolkata">South Kolkata (All)</option>
+              </optgroup>
+              <optgroup label="East Kolkata">
+                <option value="tangra">Tangra</option>
+                <option value="topsia">Topsia</option>
+                <option value="park-circus">Park Circus</option>
+                <option value="salt-lake">Salt Lake</option>
+                <option value="new-town">New Town</option>
+                <option value="em-bypass">EM Bypass</option>
+                <option value="science-city">Science City</option>
+                <option value="east-kolkata">East Kolkata (All)</option>
+              </optgroup>
+            </select>
+          </div>
         </div>
 
-        <div class="filter-group">
-          <select class="filter-select" id="priceFilter">
-            <option value="all">Any Price Range</option>
-            <option value="₹">₹ (Budget Eats)</option>
-            <option value="₹₹">₹₹ (Moderate Dining)</option>
-            <option value="₹₹₹">₹₹₹ (Fine Dining)</option>
-          </select>
+        <!-- 2. Price Range -->
+        <div class="filter-field">
+          <label for="priceFilter" class="filter-label">Price Range</label>
+          <div class="select-wrapper">
+            <select id="priceFilter" class="filter-select">
+              <option value="all">All Price Ranges</option>
+              <option value="budget">Budget (₹)</option>
+              <option value="affordable">Affordable (₹)</option>
+              <option value="moderate">Moderate (₹₹)</option>
+              <option value="premium">Premium (₹₹₹)</option>
+              <option value="fine-dining">Fine Dining (₹₹₹)</option>
+            </select>
+          </div>
+        </div>
 
-          <select class="filter-select" id="vibeFilter">
-            <option value="all">Any Vibe</option>
-            <option value="heritage">Heritage & Classic</option>
-            <option value="street">Street Legend</option>
-            <option value="cafe">High Tea & Cafe</option>
-          </select>
+        <!-- 3. Vibe -->
+        <div class="filter-field">
+          <label for="vibeFilter" class="filter-label">Vibe</label>
+          <div class="select-wrapper">
+            <select id="vibeFilter" class="filter-select">
+              <option value="all">All Vibes</option>
+              <option value="casual">Casual & Relaxed</option>
+              <option value="cozy">Cozy & Intimate</option>
+              <option value="romantic">Romantic</option>
+              <option value="family">Family Friendly</option>
+              <option value="street">Street Food</option>
+              <option value="heritage">Heritage & Traditional</option>
+              <option value="modern">Modern & Trendy</option>
+              <option value="cafe">Café & Coffee</option>
+              <option value="fine-dining">Fine Dining</option>
+              <option value="rooftop">Rooftop</option>
+              <option value="artsy">Artsy & Creative</option>
+              <option value="lively">Lively & Social</option>
+              <option value="quiet">Quiet & Peaceful</option>
+              <option value="local">Local Favourite</option>
+            </select>
+          </div>
         </div>
       </div>
 
@@ -98,7 +163,7 @@
       <div class="grid-3" id="restaurantGrid">
 
         <!-- Card 1 -->
-        <article class="restaurant-card" data-neighborhood="park-street" data-price="₹₹₹" data-vibe="heritage">
+        <article class="restaurant-card" data-neighborhood="park-street central-kolkata" data-price="premium fine-dining ₹₹₹" data-vibe="heritage fine-dining romantic cozy">
           <div class="card-image-wrap">
             <img src="assets/images/mocambo_devilled_crab.jpg" alt="Mocambo Devilled Crab">
             <div class="card-top-badges">
@@ -122,7 +187,7 @@
         </article>
 
         <!-- Card 2 -->
-        <article class="restaurant-card" data-neighborhood="park-street" data-price="₹₹" data-vibe="heritage">
+        <article class="restaurant-card" data-neighborhood="park-circus east-kolkata" data-price="moderate ₹₹" data-vibe="heritage local family casual">
           <div class="card-image-wrap">
             <img src="assets/images/arsalan_mutton_biryani.jpg" alt="Arsalan Mutton Biryani">
             <div class="card-top-badges">
@@ -146,7 +211,7 @@
         </article>
 
         <!-- Card 3 -->
-        <article class="restaurant-card" data-neighborhood="new-market" data-price="₹" data-vibe="street">
+        <article class="restaurant-card" data-neighborhood="esplanade new-market central-kolkata" data-price="budget affordable ₹" data-vibe="street local casual">
           <div class="card-image-wrap">
             <img src="assets/images/dacres_lane_stew.jpg" alt="Dacres Lane Stew">
             <div class="card-top-badges">
@@ -170,7 +235,7 @@
         </article>
 
         <!-- Card 4 -->
-        <article class="restaurant-card" data-neighborhood="park-street" data-price="₹₹" data-vibe="cafe">
+        <article class="restaurant-card" data-neighborhood="park-street central-kolkata" data-price="moderate ₹₹" data-vibe="cafe heritage cozy artsy">
           <div class="card-image-wrap">
             <img src="assets/images/flurys_high_tea.jpg" alt="Flurys Tearoom">
             <div class="card-top-badges">
@@ -194,11 +259,11 @@
         </article>
 
         <!-- Card 5 -->
-        <article class="restaurant-card" data-neighborhood="south-kolkata" data-price="₹₹" data-vibe="heritage">
+        <article class="restaurant-card" data-neighborhood="ballygunge south-kolkata" data-price="moderate ₹₹" data-vibe="heritage family local quiet">
           <div class="card-image-wrap">
             <img src="assets/images/shorshe_ilish.jpg" alt="Kewpies Bengali Dining">
             <div class="card-top-badges">
-              <span class="badge badge-burgundy">Elgin Road</span>
+              <span class="badge badge-burgundy">Ballygunge / South</span>
               <span class="star-rating">★ 4.8</span>
             </div>
           </div>
@@ -213,6 +278,54 @@
             <div class="card-footer">
               <span style="font-size: 0.85rem; color: var(--text-muted);">Authenticity: 9.8/10</span>
               <a href="#recipes" class="btn btn-sm btn-outline">Read Review →</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 6 (North Kolkata) -->
+        <article class="restaurant-card" data-neighborhood="sovabazar hatibagan north-kolkata" data-price="budget affordable ₹" data-vibe="street heritage local casual">
+          <div class="card-image-wrap">
+            <img src="assets/images/dacres_lane_stew.jpg" alt="Mitra Cafe Sovabazar">
+            <div class="card-top-badges">
+              <span class="badge badge-terracotta">Sovabazar / North</span>
+              <span class="star-rating">★ 4.9</span>
+            </div>
+          </div>
+          <div class="card-body">
+            <div class="card-meta">
+              <span>100-Year North Cabin Legend</span>
+              <span style="font-weight: 700; color: var(--accent-terracotta);">₹</span>
+            </div>
+            <h3 class="card-title">Mitra Café</h3>
+            <div class="must-try-tag">⭐ Must-Try: Fish Diamond Fry & Brain Chop</div>
+            <p>Century-old North Kolkata cabin famous for crisp, golden Bhetki cutlets and legendary crispy evening snacks.</p>
+            <div class="card-footer">
+              <span style="font-size: 0.85rem; color: var(--text-muted);">Heritage: 10/10</span>
+              <a href="#recreate" class="btn btn-sm btn-outline">Read Review →</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 7 (East Kolkata) -->
+        <article class="restaurant-card" data-neighborhood="salt-lake new-town east-kolkata" data-price="premium fine-dining ₹₹₹" data-vibe="rooftop modern romantic artsy casual">
+          <div class="card-image-wrap">
+            <img src="assets/images/flurys_high_tea.jpg" alt="Salt Lake Rooftop Dining">
+            <div class="card-top-badges">
+              <span class="badge badge-burgundy">Salt Lake / East</span>
+              <span class="star-rating">★ 4.7</span>
+            </div>
+          </div>
+          <div class="card-body">
+            <div class="card-meta">
+              <span>Rooftop Sky Lounge</span>
+              <span style="font-weight: 700; color: var(--accent-terracotta);">₹₹₹</span>
+            </div>
+            <h3 class="card-title">The Salt House Lounge</h3>
+            <div class="must-try-tag">⭐ Must-Try: Artisanal Cocktails & Burrata Flatbread</div>
+            <p>Chic outdoor rooftop dining with panoramic views of Salt Lake skyline, ideal for romantic sunsets and modern dining.</p>
+            <div class="card-footer">
+              <span style="font-size: 0.85rem; color: var(--text-muted);">Vibe: 9.7/10</span>
+              <a href="#eats-out" class="btn btn-sm btn-outline">Read Review →</a>
             </div>
           </div>
         </article>

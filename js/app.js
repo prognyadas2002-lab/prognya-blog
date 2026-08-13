@@ -90,46 +90,62 @@ function initSearchModal() {
 }
 
 /* --------------------------------------------------------------------------
-   3. EATS OUT RESTAURANT FILTERS
+   3. KOLKATA PLACE DISCOVERY FILTERS (3 DROPDOWNS)
    -------------------------------------------------------------------------- */
 function initRestaurantFilters() {
-  const filterPills = document.querySelectorAll('#eats-out .filter-pill');
+  const locationSelect = document.getElementById('locationFilter');
   const priceSelect = document.getElementById('priceFilter');
   const vibeSelect = document.getElementById('vibeFilter');
   const cards = document.querySelectorAll('.restaurant-card');
 
-  let activeNeighborhood = 'all';
-
   function filterCards() {
-    const selectedPrice = priceSelect ? priceSelect.value : 'all';
-    const selectedVibe = vibeSelect ? vibeSelect.value : 'all';
+    const selectedLocation = locationSelect ? locationSelect.value.toLowerCase() : 'all';
+    const selectedPrice = priceSelect ? priceSelect.value.toLowerCase() : 'all';
+    const selectedVibe = vibeSelect ? vibeSelect.value.toLowerCase() : 'all';
+
+    let visibleCount = 0;
 
     cards.forEach(card => {
-      const cardNeighborhood = card.dataset.neighborhood;
-      const cardPrice = card.dataset.price;
-      const cardVibe = card.dataset.vibe;
+      const cardNeighborhood = (card.dataset.neighborhood || '').toLowerCase();
+      const cardPrice = (card.dataset.price || '').toLowerCase();
+      const cardVibe = (card.dataset.vibe || '').toLowerCase();
 
-      const matchHood = (activeNeighborhood === 'all' || cardNeighborhood === activeNeighborhood);
-      const matchPrice = (selectedPrice === 'all' || cardPrice === selectedPrice);
-      const matchVibe = (selectedVibe === 'all' || cardVibe === selectedVibe);
+      // Check location match
+      const matchLocation = (selectedLocation === 'all') || cardNeighborhood.includes(selectedLocation);
 
-      if (matchHood && matchPrice && matchVibe) {
+      // Check price match
+      const matchPrice = (selectedPrice === 'all') || cardPrice.includes(selectedPrice);
+
+      // Check vibe match
+      const matchVibe = (selectedVibe === 'all') || cardVibe.includes(selectedVibe);
+
+      if (matchLocation && matchPrice && matchVibe) {
         card.style.display = 'flex';
+        visibleCount++;
       } else {
         card.style.display = 'none';
       }
     });
+
+    // Handle no results message
+    const grid = document.getElementById('restaurantGrid');
+    let noResultsEl = document.getElementById('noFilterResults');
+    if (visibleCount === 0) {
+      if (!noResultsEl && grid) {
+        noResultsEl = document.createElement('div');
+        noResultsEl.id = 'noFilterResults';
+        noResultsEl.className = 'no-results-msg';
+        noResultsEl.innerHTML = '<h3>No Kolkata experiences match your exact filter combination.</h3><p>Try selecting "All Places" or resetting the Price/Vibe dropdowns to discover more places.</p>';
+        grid.parentNode.appendChild(noResultsEl);
+      } else if (noResultsEl) {
+        noResultsEl.style.display = 'block';
+      }
+    } else if (noResultsEl) {
+      noResultsEl.style.display = 'none';
+    }
   }
 
-  filterPills.forEach(pill => {
-    pill.addEventListener('click', () => {
-      filterPills.forEach(p => p.classList.remove('active'));
-      pill.classList.add('active');
-      activeNeighborhood = pill.dataset.filter;
-      filterCards();
-    });
-  });
-
+  if (locationSelect) locationSelect.addEventListener('change', filterCards);
   if (priceSelect) priceSelect.addEventListener('change', filterCards);
   if (vibeSelect) vibeSelect.addEventListener('change', filterCards);
 }
