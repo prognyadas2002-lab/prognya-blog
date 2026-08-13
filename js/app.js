@@ -407,3 +407,150 @@ window.triggerLocationFilter = function(regionValue) {
     locationSelect.dispatchEvent(new Event('change'));
   }
 };
+
+/* ==========================================================================
+   9. GOOGLE MAPS PLATFORM INTEGRATION
+   Source: Google Maps Platform Code Assist
+   ========================================================================== */
+window.initGoogleMap = function() {
+  const mapElement = document.getElementById('googleMap');
+  if (!mapElement) return;
+
+  // Kolkata center coordinates
+  const kolkataCenter = { lat: 22.5726, lng: 88.3639 };
+
+  // Initialize Map with mandatory mapId for AdvancedMarkerElement
+  const map = new google.maps.Map(mapElement, {
+    zoom: 12.5,
+    center: kolkataCenter,
+    mapId: 'DEMO_MAP_ID', // Cloud map ID requirement for Advanced Markers
+    mapTypeControl: false,
+    streetViewControl: true,
+    fullscreenControl: true,
+    zoomControl: true,
+    styles: [
+      {
+        featureType: "poi.business",
+        elementType: "labels",
+        stylers: [{ visibility: "off" }]
+      }
+    ]
+  });
+
+  // Kolkata Culinary Discovery Locations
+  const kolkataLocations = [
+    {
+      title: "Mocambo Restaurant & Bar",
+      location: { lat: 22.5535, lng: 88.3533 },
+      neighborhood: "Park Street",
+      type: "Heritage Colonial Fine Dining",
+      mustTry: "Baked Devilled Crab & Beckty Bell-Helena",
+      rating: "★ 4.9"
+    },
+    {
+      title: "Arsalan Restaurant",
+      location: { lat: 22.5448, lng: 88.3644 },
+      neighborhood: "Park Circus",
+      type: "Mughlai Institution",
+      mustTry: "Special Mutton Biryani & Mutton Rezala",
+      rating: "★ 4.8"
+    },
+    {
+      title: "Chitto Babur Dokan",
+      location: { lat: 22.5697, lng: 88.3512 },
+      neighborhood: "Dacres Lane / Esplanade",
+      type: "Historic Street Food Lane",
+      mustTry: "Chicken Stew & Buttered Toast",
+      rating: "★ 4.7"
+    },
+    {
+      title: "Flurys Tearoom",
+      location: { lat: 22.5538, lng: 88.3528 },
+      neighborhood: "Park Street",
+      type: "Swiss Confectionery Since 1927",
+      mustTry: "Full English Breakfast & Rum Balls",
+      rating: "★ 4.6"
+    },
+    {
+      title: "Kewpie’s Kitchen",
+      location: { lat: 22.5385, lng: 88.3524 },
+      neighborhood: "Ballygunge",
+      type: "Authentic Bengali Thali",
+      mustTry: "Grand Zamindari Thali & Daab Chingri",
+      rating: "★ 4.8"
+    },
+    {
+      title: "Mitra Café",
+      location: { lat: 22.5982, lng: 88.3680 },
+      neighborhood: "Sovabazar",
+      type: "100-Year North Cabin Legend",
+      mustTry: "Fish Diamond Fry & Brain Chop",
+      rating: "★ 4.9"
+    },
+    {
+      title: "The Salt House Lounge",
+      location: { lat: 22.5804, lng: 88.4168 },
+      neighborhood: "Salt Lake",
+      type: "Rooftop Sky Lounge",
+      mustTry: "Artisanal Cocktails & Burrata Flatbread",
+      rating: "★ 4.7"
+    }
+  ];
+
+  const infoWindow = new google.maps.InfoWindow();
+
+  kolkataLocations.forEach(spot => {
+    let marker;
+
+    if (google.maps.marker && google.maps.marker.AdvancedMarkerElement) {
+      // AdvancedMarkerElement Pin Styling
+      const pinGlyph = document.createElement('div');
+      pinGlyph.style.background = '#4A1521';
+      pinGlyph.style.color = '#FFFDF9';
+      pinGlyph.style.padding = '6px 12px';
+      pinGlyph.style.borderRadius = '20px';
+      pinGlyph.style.fontWeight = '700';
+      pinGlyph.style.fontSize = '12px';
+      pinGlyph.style.fontFamily = "'Montserrat', sans-serif";
+      pinGlyph.style.border = '2px solid #E05A47';
+      pinGlyph.style.boxShadow = '0 3px 10px rgba(0,0,0,0.3)';
+      pinGlyph.style.cursor = 'pointer';
+      pinGlyph.innerHTML = `📍 ${spot.title}`;
+
+      marker = new google.maps.marker.AdvancedMarkerElement({
+        map: map,
+        position: spot.location,
+        title: spot.title,
+        content: pinGlyph
+      });
+    } else {
+      // Fallback Marker
+      marker = new google.maps.Marker({
+        position: spot.location,
+        map: map,
+        title: spot.title
+      });
+    }
+
+    const contentString = `
+      <div style="padding: 8px 12px; max-width: 250px; font-family: 'Open Sans', sans-serif;">
+        <span style="background: #E05A47; color: #fff; font-size: 10px; padding: 2px 6px; border-radius: 10px; font-weight: 700; text-transform: uppercase;">${spot.neighborhood}</span>
+        <h4 style="margin: 6px 0 4px; color: #4A1521; font-family: 'Montserrat', sans-serif; font-size: 14px; font-weight: 700;">${spot.title}</h4>
+        <p style="margin: 0 0 6px; font-size: 12px; color: #555;">${spot.type} • <strong style="color: #4A1521;">${spot.rating}</strong></p>
+        <div style="font-size: 11px; color: #E05A47; font-weight: 600;">⭐ ${spot.mustTry}</div>
+      </div>
+    `;
+
+    if (marker.addListener) {
+      marker.addListener('click', () => {
+        infoWindow.setContent(contentString);
+        infoWindow.open(map, marker);
+      });
+    } else if (marker.addEventListener) {
+      marker.addEventListener('click', () => {
+        infoWindow.setContent(contentString);
+        infoWindow.open(map, marker);
+      });
+    }
+  });
+};
