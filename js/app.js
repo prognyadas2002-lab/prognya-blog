@@ -9,6 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initRecipeScalerAndModal();
   initCommunityForm();
   initCityGuidesSharing();
+  initFooterNewsletterAndExplore();
 });
 
 /* --------------------------------------------------------------------------
@@ -351,3 +352,58 @@ function showToast(message) {
     setTimeout(() => toast.remove(), 300);
   }, 3500);
 }
+
+/* --------------------------------------------------------------------------
+   8. FOOTER NEWSLETTER & EXPLORE REGION FILTER HANDLERS
+   -------------------------------------------------------------------------- */
+function initFooterNewsletterAndExplore() {
+  const form = document.getElementById('footerNewsletterForm');
+  const emailInput = document.getElementById('footerEmailInput');
+  const submitBtn = document.getElementById('footerSubscribeBtn');
+
+  if (form) {
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const email = emailInput ? emailInput.value.trim() : '';
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+      if (!email || !emailRegex.test(email)) {
+        showToast('⚠️ Please enter a valid email address.');
+        if (emailInput) emailInput.focus();
+        return;
+      }
+
+      const existingSubs = JSON.parse(localStorage.getItem('subscribed_emails') || '[]');
+      if (existingSubs.includes(email.toLowerCase())) {
+        showToast('ℹ️ You are already subscribed to the Friday Foodie Newsletter!');
+        return;
+      }
+
+      if (submitBtn) {
+        submitBtn.disabled = true;
+        submitBtn.innerText = 'Subscribing...';
+      }
+
+      setTimeout(() => {
+        existingSubs.push(email.toLowerCase());
+        localStorage.setItem('subscribed_emails', JSON.stringify(existingSubs));
+        
+        showToast('🎉 Thank you for subscribing to Friday Foodie Newsletter!');
+        if (emailInput) emailInput.value = '';
+        if (submitBtn) {
+          submitBtn.disabled = false;
+          submitBtn.innerText = 'Subscribe';
+        }
+      }, 600);
+    });
+  }
+}
+
+// Global helper to trigger location filtering from Footer Explore links
+window.triggerLocationFilter = function(regionValue) {
+  const locationSelect = document.getElementById('locationFilter');
+  if (locationSelect) {
+    locationSelect.value = regionValue;
+    locationSelect.dispatchEvent(new Event('change'));
+  }
+};
