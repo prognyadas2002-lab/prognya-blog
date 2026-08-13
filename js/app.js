@@ -494,6 +494,14 @@ window.initGoogleMap = function() {
       type: "Rooftop Sky Lounge",
       mustTry: "Artisanal Cocktails & Burrata Flatbread",
       rating: "★ 4.7"
+    },
+    {
+      title: "Cafe O Kobita",
+      location: { lat: 22.6015, lng: 88.3712 },
+      neighborhood: "Shyambazar",
+      type: "Aesthetic & Cozy Café",
+      mustTry: "Pizza & Lasagna",
+      rating: "★ 4.1"
     }
   ];
 
@@ -659,3 +667,26 @@ function loadLeafletFallbackMap() {
     marker.bindPopup(popupContent);
   });
 }
+
+/* ==========================================================================
+   REVIEW MODAL OPEN/CLOSE HANDLERS
+   ========================================================================== */
+window.openReviewModal = function(reviewId) {
+  if (reviewId === 'cafe-o-kobita') {
+    const modal = document.getElementById('cafeOKobitaModal');
+    if (modal) {
+      modal.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+  }
+};
+
+window.closeReviewModal = function(reviewId) {
+  if (reviewId === 'cafe-o-kobita') {
+    const modal = document.getElementById('cafeOKobitaModal');
+    if (modal) {
+      modal.classList.remove('open');
+      document.body.style.overflow = '';
+    }
+  }
+};

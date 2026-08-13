@@ -320,6 +320,27 @@
               <span style="font-size: 0.85rem; color: var(--text-muted);">Vibe: 9.7/10</span>
               <a href="#eats-out" class="btn btn-sm btn-outline">Read Review →</a>
             </div>
+        <!-- Card 8: Cafe O Kobita (Shyambazar) -->
+        <article class="restaurant-card" data-neighborhood="shyambazar north-kolkata" data-price="budget affordable ₹ ₹200-₹600" data-vibe="aesthetic-cozy">
+          <div class="card-image-wrap">
+            <img src="assets/images/cafe_o_kobita.jpg" alt="Cafe O Kobita Shyambazar">
+            <div class="card-top-badges">
+              <span class="badge badge-burgundy">SHYAMBAZAR</span>
+              <span class="star-rating">★ 4.1</span>
+            </div>
+          </div>
+          <div class="card-body">
+            <div class="card-meta">
+              <span>Aesthetic & Cozy Café</span>
+              <span style="font-weight: 700; color: var(--accent-terracotta);">₹200–₹600</span>
+            </div>
+            <h3 class="card-title">Cafe O Kobita</h3>
+            <div class="must-try-tag">⭐ Must-Try: Pizza & Lasagna</div>
+            <p>A cosy, bookish café near Shyambazar Metro serving generous portions of pizza, lasagna, fish and chips, and refreshing beverages at a very reasonable price.</p>
+            <div class="card-footer">
+              <span style="font-size: 0.85rem; color: var(--text-muted);">Food & Experience: 4.1/5</span>
+              <button class="btn btn-sm btn-outline" onclick="openReviewModal('cafe-o-kobita')">Read Review →</button>
+            </div>
           </div>
         </article>
 
@@ -778,6 +799,58 @@
         </div>
 
         <button class="btn btn-secondary" style="margin-top: 1.5rem;" onclick="window.print()">🖨️ Print Kitchen Recipe</button>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ==========================================================================
+       FULL REVIEW ARTICLE MODAL: CAFE O KOBITA
+       ========================================================================== -->
+  <div class="modal-overlay" id="cafeOKobitaModal">
+    <div class="modal-container" style="max-width: 780px; padding: 2.5rem 2rem; max-height: 90vh; overflow-y: auto;">
+      <button class="modal-close-btn" onclick="closeReviewModal('cafe-o-kobita')">×</button>
+      
+      <!-- Article Header -->
+      <div style="margin-bottom: 1.5rem; border-bottom: 2px solid var(--border-sand-light); padding-bottom: 1.25rem;">
+        <span class="badge badge-terracotta" style="margin-bottom: 0.5rem;">Shyambazar, Kolkata • Aesthetic & Cozy</span>
+        <h1 style="color: var(--brand-burgundy); font-family: var(--font-heading); font-size: clamp(1.4rem, 2.5vw, 1.85rem); margin-top: 0.35rem; margin-bottom: 0.75rem;">Cafe O Kobita: A Cosy Café in the Heart of Shyambazar</h1>
+        
+        <div style="display: flex; flex-wrap: wrap; gap: 1rem; align-items: center; font-size: 0.9rem; color: var(--text-muted); background: var(--bg-secondary); padding: 0.75rem 1rem; border-radius: var(--radius-sm);">
+          <span>📍 <strong>Location:</strong> Shyambazar, Kolkata</span>
+          <span>✨ <strong>Vibe:</strong> Aesthetic & Cozy</span>
+          <span>⭐ <strong>Rating:</strong> 4.1 / 5</span>
+          <span>💰 <strong>Price for Two:</strong> ₹200–₹600</span>
+        </div>
+      </div>
+
+      <!-- Featured Image -->
+      <div style="width: 100%; height: 320px; border-radius: var(--radius-md); overflow: hidden; margin-bottom: 1.75rem; box-shadow: var(--shadow-sm);">
+        <img src="assets/images/cafe_o_kobita.jpg" alt="Cafe O Kobita Shyambazar" style="width: 100%; height: 100%; object-fit: cover;">
+      </div>
+
+      <!-- Article Body Content -->
+      <div class="review-article-body" style="font-size: 1.05rem; line-height: 1.75; color: var(--text-espresso);">
+        <p style="margin-bottom: 1.25rem;"><strong>Cafe O Kobita</strong> is one of those small cafes that feels instantly comfortable. Located just about a minute’s walk from Shyambazar Metro, it is an easy spot to visit when exploring North Kolkata or simply looking for a relaxed place to enjoy good food.</p>
+
+        <p style="margin-bottom: 1.25rem;">What makes this cafe particularly charming is its atmosphere. The space has a cosy, aesthetic and distinctly North Kolkata character, with a bookish ambience that connects beautifully with Bengal’s literary and cultural roots.</p>
+
+        <p style="margin-bottom: 1.25rem;">The food is another highlight. The menu includes different options such as pizza, fish and chips, and beverages. I personally tried the pizza and lasagna and both were genuinely good. The portion sizes were also generous, which made the experience particularly satisfying considering the price range.</p>
+
+        <p style="margin-bottom: 1.25rem;">For me, Cafe O Kobita captures something special about North Kolkata cafes. There is a traditional cultural character here that feels different from many newer café spaces elsewhere in the city. It feels contemporary enough to be aesthetic and comfortable, while still retaining a connection to the roots and character of North Kolkata.</p>
+
+        <p style="margin-bottom: 1.5rem;">If you are looking for an aesthetic and cosy café near Shyambazar Metro, with good food, generous portions and reasonable pricing, Cafe O Kobita is definitely worth a visit.</p>
+
+        <!-- Final Verdict Callout Box -->
+        <div style="background: var(--bg-secondary); border-left: 4px solid var(--accent-terracotta); border-radius: var(--radius-md); padding: 1.5rem; margin-top: 2rem;">
+          <h3 style="color: var(--brand-burgundy); font-family: var(--font-heading); margin-bottom: 0.5rem; font-size: 1.2rem;">Final Verdict</h3>
+          <div style="font-weight: 700; color: var(--accent-terracotta); margin-bottom: 0.5rem; font-size: 1.1rem;">My Rating: 4.1/5</div>
+          <p style="margin: 0; font-size: 0.98rem; line-height: 1.6;">A charming North Kolkata café that combines good food, generous portions, a cosy atmosphere and a distinctly Bengali cultural character — all at a reasonable price.</p>
+        </div>
+      </div>
+
+      <div style="margin-top: 2rem; text-align: center;">
+        <button class="btn btn-outline" onclick="closeReviewModal('cafe-o-kobita')">← Close Review</button>
       </div>
     </div>
   </div>
