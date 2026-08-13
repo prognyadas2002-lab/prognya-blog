@@ -554,3 +554,108 @@ window.initGoogleMap = function() {
     }
   });
 };
+
+/* ==========================================================================
+   GOOGLE MAPS AUTH FAILURE & LEAFLET MAP FALLBACK ENGINE
+   ========================================================================== */
+window.gm_authFailure = function() {
+  console.warn("Google Maps API Key lacks active GCP billing or Maps JS API activation. Initializing Leaflet map engine...");
+  loadLeafletFallbackMap();
+};
+
+function loadLeafletFallbackMap() {
+  const mapElement = document.getElementById('googleMap');
+  if (!mapElement || mapElement.dataset.loadedFallback === 'true') return;
+  mapElement.dataset.loadedFallback = 'true';
+  mapElement.innerHTML = ''; // Clear google error modal DOM elements
+
+  if (typeof L === 'undefined') return;
+
+  const map = L.map('googleMap').setView([22.5726, 88.3639], 12.5);
+
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    maxZoom: 19,
+    attribution: '© OpenStreetMap contributors | Kolkata Chronicles'
+  }).addTo(map);
+
+  const kolkataLocations = [
+    {
+      title: "Mocambo Restaurant & Bar",
+      lat: 22.5535, lng: 88.3533,
+      neighborhood: "Park Street",
+      type: "Heritage Colonial Fine Dining",
+      mustTry: "Baked Devilled Crab & Beckty Bell-Helena",
+      rating: "★ 4.9"
+    },
+    {
+      title: "Arsalan Restaurant",
+      lat: 22.5448, lng: 88.3644,
+      neighborhood: "Park Circus",
+      type: "Mughlai Institution",
+      mustTry: "Special Mutton Biryani & Mutton Rezala",
+      rating: "★ 4.8"
+    },
+    {
+      title: "Chitto Babur Dokan",
+      lat: 22.5697, lng: 88.3512,
+      neighborhood: "Dacres Lane / Esplanade",
+      type: "Historic Street Food Lane",
+      mustTry: "Chicken Stew & Buttered Toast",
+      rating: "★ 4.7"
+    },
+    {
+      title: "Flurys Tearoom",
+      lat: 22.5538, lng: 88.3528,
+      neighborhood: "Park Street",
+      type: "Swiss Confectionery Since 1927",
+      mustTry: "Full English Breakfast & Rum Balls",
+      rating: "★ 4.6"
+    },
+    {
+      title: "Kewpie’s Kitchen",
+      lat: 22.5385, lng: 88.3524,
+      neighborhood: "Ballygunge",
+      type: "Authentic Bengali Thali",
+      mustTry: "Grand Zamindari Thali & Daab Chingri",
+      rating: "★ 4.8"
+    },
+    {
+      title: "Mitra Café",
+      lat: 22.5982, lng: 88.3680,
+      neighborhood: "Sovabazar",
+      type: "100-Year North Cabin Legend",
+      mustTry: "Fish Diamond Fry & Brain Chop",
+      rating: "★ 4.9"
+    },
+    {
+      title: "The Salt House Lounge",
+      lat: 22.5804, lng: 88.4168,
+      neighborhood: "Salt Lake",
+      type: "Rooftop Sky Lounge",
+      mustTry: "Artisanal Cocktails & Burrata Flatbread",
+      rating: "★ 4.7"
+    }
+  ];
+
+  kolkataLocations.forEach(spot => {
+    const customIcon = L.divIcon({
+      className: 'leaflet-custom-pin',
+      html: `<div style="background:#4A1521; color:#FFFDF9; padding:5px 11px; border-radius:16px; border:2px solid #E05A47; font-weight:700; font-size:11px; font-family:'Montserrat',sans-serif; box-shadow:0 3px 10px rgba(0,0,0,0.3); white-space:nowrap; cursor:pointer;">📍 ${spot.title}</div>`,
+      iconSize: [120, 30],
+      iconAnchor: [60, 15]
+    });
+
+    const marker = L.marker([spot.lat, spot.lng], { icon: customIcon }).addTo(map);
+
+    const popupContent = `
+      <div style="padding: 4px 6px; font-family: 'Open Sans', sans-serif;">
+        <span style="background: #E05A47; color: #fff; font-size: 10px; padding: 2px 6px; border-radius: 10px; font-weight: 700; text-transform: uppercase;">${spot.neighborhood}</span>
+        <h4 style="margin: 6px 0 4px; color: #4A1521; font-family: 'Montserrat', sans-serif; font-size: 13px; font-weight: 700;">${spot.title}</h4>
+        <p style="margin: 0 0 6px; font-size: 11px; color: #555;">${spot.type} • <strong style="color: #4A1521;">${spot.rating}</strong></p>
+        <div style="font-size: 11px; color: #E05A47; font-weight: 600;">⭐ ${spot.mustTry}</div>
+      </div>
+    `;
+
+    marker.bindPopup(popupContent);
+  });
+}
