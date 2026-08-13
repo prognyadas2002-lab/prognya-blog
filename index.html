@@ -323,6 +323,30 @@
           </div>
         </article>
 
+        <!-- Card 8: Cafe at Calcutta (Shyambazar / North Kolkata) -->
+        <article class="restaurant-card" data-neighborhood="shyambazar north-kolkata" data-price="budget affordable ₹ ₹200-₹600" data-vibe="traditional-heritage">
+          <div class="card-image-wrap">
+            <img src="assets/images/cafe_at_calcutta.jpg" alt="Cafe at Calcutta Shyambazar">
+            <div class="card-top-badges">
+              <span class="badge badge-burgundy">SHYAMBAZAR</span>
+              <span class="star-rating">★ 4.1</span>
+            </div>
+          </div>
+          <div class="card-body">
+            <div class="card-meta">
+              <span>Traditional & Heritage</span>
+              <span style="font-weight: 700; color: var(--accent-terracotta);">₹200–₹600</span>
+            </div>
+            <h3 class="card-title">Cafe at Calcutta</h3>
+            <div class="must-try-tag">⭐ Must-Try: Mojito</div>
+            <p>A charming heritage-inspired café inside a preserved North Kolkata Bonedi Bari veranda near Shyambazar, serving refreshing mojitos, traditional snacks, and authentic old-world adda vibes at reasonable prices.</p>
+            <div class="card-footer">
+              <span style="font-size: 0.85rem; color: var(--text-muted);">Food & Experience: 4.1/5</span>
+              <button class="btn btn-sm btn-outline" onclick="openReviewModal('cafe-at-calcutta')">Read Review →</button>
+            </div>
+          </div>
+        </article>
+
       </div>
 
       <!-- Interactive Kolkata Dining Google Map Container -->
@@ -830,6 +854,58 @@
 
       <div style="margin-top: 2rem; text-align: center;">
         <button class="btn btn-outline" onclick="closeReviewModal('cafe-o-kobita')">← Close Review</button>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ==========================================================================
+       FULL REVIEW ARTICLE MODAL: CAFE AT CALCUTTA
+       ========================================================================== -->
+  <div class="modal-overlay" id="cafeAtCalcuttaModal">
+    <div class="modal-container" style="max-width: 780px; padding: 2.5rem 2rem; max-height: 90vh; overflow-y: auto;">
+      <button class="modal-close-btn" onclick="closeReviewModal('cafe-at-calcutta')">×</button>
+      
+      <!-- Article Header -->
+      <div style="margin-bottom: 1.5rem; border-bottom: 2px solid var(--border-sand-light); padding-bottom: 1.25rem;">
+        <span class="badge badge-terracotta" style="margin-bottom: 0.5rem;">Shyambazar, Kolkata • Traditional & Heritage</span>
+        <h1 style="color: var(--brand-burgundy); font-family: var(--font-heading); font-size: clamp(1.4rem, 2.5vw, 1.85rem); margin-top: 0.35rem; margin-bottom: 0.75rem;">Cafe at Calcutta: Heritage Veranda Café in Shyambazar</h1>
+        
+        <div style="display: flex; flex-wrap: wrap; gap: 1rem; align-items: center; font-size: 0.9rem; color: var(--text-muted); background: var(--bg-secondary); padding: 0.75rem 1rem; border-radius: var(--radius-sm);">
+          <span>📍 <strong>Location:</strong> Shyambazar, North Kolkata</span>
+          <span>🏛️ <strong>Vibe:</strong> Traditional & Heritage</span>
+          <span>⭐ <strong>Rating:</strong> 4.1 / 5</span>
+          <span>💰 <strong>Price for Two:</strong> ₹200–₹600</span>
+        </div>
+      </div>
+
+      <!-- Featured Image -->
+      <div style="width: 100%; height: 320px; border-radius: var(--radius-md); overflow: hidden; margin-bottom: 1.75rem; box-shadow: var(--shadow-sm);">
+        <img src="assets/images/cafe_at_calcutta.jpg" alt="Cafe at Calcutta Shyambazar" style="width: 100%; height: 100%; object-fit: cover;">
+      </div>
+
+      <!-- Article Body Content -->
+      <div class="review-article-body" style="font-size: 1.05rem; line-height: 1.75; color: var(--text-espresso);">
+        <p style="margin-bottom: 1.25rem;"><strong>Cafe at Calcutta</strong> is a hidden gem tucked inside a beautifully restored Bonedi Bari in Shyambazar, North Kolkata. Stepping into its airy veranda feels like traveling back in time to the golden era of North Kolkata adda and culture.</p>
+
+        <p style="margin-bottom: 1.25rem;">The ambience is authentically heritage and nostalgic. Wooden shutters, vintage courtyard lighting, and traditional Bengali architectural accents give this café a unique, timeless personality.</p>
+
+        <p style="margin-bottom: 1.25rem;">On the menu, their signature refreshing <strong>Mojito</strong> is an absolute must-try, perfectly paired with crispy Bengali evening snacks and continental bites. The portion sizes are generous and priced reasonably between ₹200–₹600 for two people.</p>
+
+        <p style="margin-bottom: 1.25rem;">What sets Cafe at Calcutta apart is how seamlessly it blends old-world heritage charm with casual modern café culture. It's a wonderful spot for quiet reading, casual conversations, or an unhurried afternoon coffee in North Kolkata.</p>
+
+        <p style="margin-bottom: 1.5rem;">If you are looking for a traditional heritage café near Shyambazar Metro with classic Bonedi Bari architecture, great signature mojitos, and authentic Bengali character, Cafe at Calcutta is well worth a visit.</p>
+
+        <!-- Final Verdict Callout Box -->
+        <div style="background: var(--bg-secondary); border-left: 4px solid var(--accent-terracotta); border-radius: var(--radius-md); padding: 1.5rem; margin-top: 2rem;">
+          <h3 style="color: var(--brand-burgundy); font-family: var(--font-heading); margin-bottom: 0.5rem; font-size: 1.2rem;">Final Verdict</h3>
+          <div style="font-weight: 700; color: var(--accent-terracotta); margin-bottom: 0.5rem; font-size: 1.1rem;">My Rating: 4.1/5</div>
+          <p style="margin: 0; font-size: 0.98rem; line-height: 1.6;">A delightful North Kolkata heritage café combining traditional Bonedi Bari architecture, refreshing signature mojitos, and authentic adda culture at budget-friendly prices.</p>
+        </div>
+      </div>
+
+      <div style="margin-top: 2rem; text-align: center;">
+        <button class="btn btn-outline" onclick="closeReviewModal('cafe-at-calcutta')">← Close Review</button>
       </div>
     </div>
   </div>

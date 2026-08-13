@@ -502,6 +502,14 @@ window.initGoogleMap = function() {
       type: "Aesthetic & Cozy Café",
       mustTry: "Pizza & Lasagna",
       rating: "★ 4.1"
+    },
+    {
+      title: "Cafe at Calcutta",
+      location: { lat: 22.6030, lng: 88.3725 },
+      neighborhood: "Shyambazar",
+      type: "Traditional & Heritage",
+      mustTry: "Mojito",
+      rating: "★ 4.1"
     }
   ];
 
@@ -672,8 +680,12 @@ function loadLeafletFallbackMap() {
    REVIEW MODAL OPEN/CLOSE HANDLERS
    ========================================================================== */
 window.openReviewModal = function(reviewId) {
-  if (reviewId === 'cafe-o-kobita') {
-    const modal = document.getElementById('cafeOKobitaModal');
+  let modalId = '';
+  if (reviewId === 'cafe-o-kobita') modalId = 'cafeOKobitaModal';
+  else if (reviewId === 'cafe-at-calcutta') modalId = 'cafeAtCalcuttaModal';
+
+  if (modalId) {
+    const modal = document.getElementById(modalId);
     if (modal) {
       modal.classList.add('open');
       document.body.style.overflow = 'hidden';
@@ -682,8 +694,12 @@ window.openReviewModal = function(reviewId) {
 };
 
 window.closeReviewModal = function(reviewId) {
-  if (reviewId === 'cafe-o-kobita') {
-    const modal = document.getElementById('cafeOKobitaModal');
+  let modalId = '';
+  if (reviewId === 'cafe-o-kobita') modalId = 'cafeOKobitaModal';
+  else if (reviewId === 'cafe-at-calcutta') modalId = 'cafeAtCalcuttaModal';
+
+  if (modalId) {
+    const modal = document.getElementById(modalId);
     if (modal) {
       modal.classList.remove('open');
       document.body.style.overflow = '';
