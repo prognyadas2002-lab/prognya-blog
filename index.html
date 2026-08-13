@@ -251,6 +251,30 @@
           </div>
         </article>
 
+        <!-- Card: Peter Cat (Park Street / Central Kolkata) -->
+        <article class="restaurant-card" data-neighborhood="park-street central-kolkata" data-price="moderate ₹₹" data-vibe="traditional-heritage">
+          <div class="card-image-wrap">
+            <img src="assets/images/peter_cat.jpg" alt="Peter Cat Park Street">
+            <div class="card-top-badges">
+              <span class="badge badge-burgundy">PARK STREET</span>
+              <span class="star-rating">★ 3.8</span>
+            </div>
+          </div>
+          <div class="card-body">
+            <div class="card-meta">
+              <span>Heritage Colonial Dining</span>
+              <span style="font-weight: 700; color: var(--accent-terracotta);">₹₹</span>
+            </div>
+            <h3 class="card-title">Peter Cat</h3>
+            <div class="must-try-tag">⭐ Must-Try: Mutton Rogan Josh & Chelo Kebab</div>
+            <p>Famous for its iconic Chelo Kebab and British-colonial charm, but the real surprise here is the Mutton Rogan Josh. Honest thoughts on Park Street's legendary spot.</p>
+            <div class="card-footer">
+              <span style="font-size: 0.85rem; color: var(--text-muted);">Food & Experience: 3.8/5</span>
+              <button class="btn btn-sm btn-outline" onclick="openReviewModal('peter-cat')">Read Review →</button>
+            </div>
+          </div>
+        </article>
+
         <!-- Card 5: Kewpie’s Kitchen (Ballygunge / South Kolkata) -->
         <article class="restaurant-card" data-neighborhood="ballygunge south-kolkata" data-price="moderate ₹₹" data-vibe="family-friendly traditional-heritage">
           <div class="card-image-wrap">
@@ -906,6 +930,80 @@
 
       <div style="margin-top: 2rem; text-align: center;">
         <button class="btn btn-outline" onclick="closeReviewModal('cafe-at-calcutta')">← Close Review</button>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ==========================================================================
+       FULL REVIEW ARTICLE MODAL: PETER CAT
+       ========================================================================== -->
+  <div class="modal-overlay" id="peterCatModal">
+    <div class="modal-container" style="max-width: 780px; padding: 2.5rem 2rem; max-height: 90vh; overflow-y: auto;">
+      <button class="modal-close-btn" onclick="closeReviewModal('peter-cat')">×</button>
+      
+      <!-- Article Header -->
+      <div style="margin-bottom: 1.5rem; border-bottom: 2px solid var(--border-sand-light); padding-bottom: 1.25rem;">
+        <span class="badge badge-burgundy" style="margin-bottom: 0.5rem;">Park Street, Kolkata • Heritage Colonial Dining</span>
+        <h1 style="color: var(--brand-burgundy); font-family: var(--font-heading); font-size: clamp(1.4rem, 2.5vw, 1.85rem); margin-top: 0.35rem; margin-bottom: 0.75rem;">Peter Cat, Park Street: Beyond the Famous Chelo Kebab</h1>
+        
+        <div style="display: flex; flex-wrap: wrap; gap: 1rem; align-items: center; font-size: 0.9rem; color: var(--text-muted); background: var(--bg-secondary); padding: 0.75rem 1rem; border-radius: var(--radius-sm);">
+          <span>📍 <strong>Location:</strong> Park Street, Central Kolkata</span>
+          <span>🏛️ <strong>Vibe:</strong> Traditional & Heritage</span>
+          <span>⭐ <strong>Rating:</strong> 3.8 / 5</span>
+          <span>💰 <strong>Price for Two:</strong> ₹800–₹1500</span>
+        </div>
+      </div>
+
+      <!-- Featured Image -->
+      <div style="width: 100%; height: 320px; border-radius: var(--radius-md); overflow: hidden; margin-bottom: 1.75rem; box-shadow: var(--shadow-sm);">
+        <img src="assets/images/peter_cat.jpg" alt="Peter Cat Park Street" style="width: 100%; height: 100%; object-fit: cover;">
+      </div>
+
+      <!-- Article Body Content (Preserving exact conversational voice) -->
+      <div class="review-article-body" style="font-size: 1.05rem; line-height: 1.75; color: var(--text-espresso);">
+        <p style="margin-bottom: 1.25rem;">I visited Peter Cat last year, and honestly, the first thing I noticed was how crowded it was. But then again, it is Peter Cat on Park Street. So I was not really surprised.</p>
+
+        <p style="margin-bottom: 1.25rem;">The ambience is actually one of the things I liked about the place. There is a British-colonial feel to it, with wooden flooring, warm lighting and old-school music playing in the background. It has that classic Park Street feeling. You can actually feel that you are sitting in one of those old Kolkata restaurants that have been part of the city for years.</p>
+
+        <p style="margin-bottom: 1.25rem;">Of course, I had to try the Chelo Kebab. That is what Peter Cat is famous for. The dish has Persian or Iranian roots and comes as a complete meal with kebabs, buttered rice, egg and a lot of butter.</p>
+
+        <p style="margin-bottom: 1.25rem;">But personally, I found the Chelo Kebab just okay.</p>
+
+        <p style="margin-bottom: 1.25rem;">Maybe it was a little too buttery for me. The kebab also felt slightly chewy and dry. I know people absolutely love it and I can understand why it is so famous. If you are visiting Peter Cat for the first time, I would still say try it once. But for me, it was not the best thing I had there.</p>
+
+        <p style="margin-bottom: 1.25rem;">What actually surprised me was the Mutton Rogan Josh.</p>
+
+        <p style="margin-bottom: 1.25rem;">After finishing the Chelo Kebab, I started enjoying the Rogan Josh much more. It was flavourful and really satisfying. I honestly was not expecting it to be that good.</p>
+
+        <p style="margin-bottom: 1.25rem;">So if you ask me what I would recommend at Peter Cat apart from the famous Chelo Kebab, I would definitely say Mutton Rogan Josh.</p>
+
+        <p style="margin-bottom: 1.25rem;">I also tried their biryani. It was quite good and the portion size was generous. I liked the taste. My only complaint was the mutton pieces. I expected them to be a little bigger. It is not something I would compare with Kolkata's famous biryani specialists, but still, the biryani at Peter Cat is worth trying.</p>
+
+        <p style="margin-bottom: 1.25rem;">I also had a Mutton Naan with the meal.</p>
+
+        <p style="margin-bottom: 1.25rem;">Overall, I feel Peter Cat is better when you explore beyond the Chelo Kebab. The Chelo Kebab is obviously the dish everyone talks about. But there are other dishes on the menu that deserve attention too.</p>
+
+        <p style="margin-bottom: 1.25rem;">For me, the Mutton Rogan Josh was the real highlight.</p>
+
+        <p style="margin-bottom: 1.25rem;">And then there is the whole Peter Cat experience. The wooden floor, the music, the old-school ambience and the crowd. Everything together somehow defines Park Street for me.</p>
+
+        <p style="margin-bottom: 1.5rem;">I think everyone should visit Peter Cat at least once. Not necessarily only for the Chelo Kebab. Go there to experience the restaurant itself and try some of the other dishes too.</p>
+
+        <!-- Final Verdict Callout Box -->
+        <div style="background: var(--bg-secondary); border-left: 4px solid var(--accent-terracotta); border-radius: var(--radius-md); padding: 1.5rem; margin-top: 2rem;">
+          <h3 style="color: var(--brand-burgundy); font-family: var(--font-heading); margin-bottom: 0.5rem; font-size: 1.2rem;">My Verdict</h3>
+          <div style="font-weight: 700; color: var(--accent-terracotta); margin-bottom: 0.75rem; font-size: 1.1rem;">My rating: 3.8/5</div>
+          
+          <p style="margin-bottom: 0.5rem; font-size: 0.98rem; line-height: 1.6;"><strong>Would I recommend the Chelo Kebab?</strong> Yes. You should try it once because it is such an iconic Peter Cat dish.</p>
+          <p style="margin-bottom: 0.5rem; font-size: 0.98rem; line-height: 1.6;"><strong>Would I order it again?</strong> Probably not my first choice.</p>
+          <p style="margin-bottom: 0.5rem; font-size: 0.98rem; line-height: 1.6;">My personal recommendation would be the Mutton Rogan Josh. I would also try the biryani and explore some of their other dishes.</p>
+          <p style="margin: 0; font-size: 0.98rem; line-height: 1.6;">For me, Peter Cat is not just about the Chelo Kebab. It is about the whole Park Street experience.</p>
+        </div>
+      </div>
+
+      <div style="margin-top: 2rem; text-align: center;">
+        <button class="btn btn-outline" onclick="closeReviewModal('peter-cat')">← Close Review</button>
       </div>
     </div>
   </div>

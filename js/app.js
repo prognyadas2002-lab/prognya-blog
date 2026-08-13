@@ -510,6 +510,14 @@ window.initGoogleMap = function() {
       type: "Traditional & Heritage",
       mustTry: "Mojito",
       rating: "★ 4.1"
+    },
+    {
+      title: "Peter Cat",
+      location: { lat: 22.5532, lng: 88.3530 },
+      neighborhood: "Park Street",
+      type: "Heritage Colonial Dining",
+      mustTry: "Mutton Rogan Josh & Chelo Kebab",
+      rating: "★ 3.8"
     }
   ];
 
@@ -683,6 +691,7 @@ window.openReviewModal = function(reviewId) {
   let modalId = '';
   if (reviewId === 'cafe-o-kobita') modalId = 'cafeOKobitaModal';
   else if (reviewId === 'cafe-at-calcutta') modalId = 'cafeAtCalcuttaModal';
+  else if (reviewId === 'peter-cat') modalId = 'peterCatModal';
 
   if (modalId) {
     const modal = document.getElementById(modalId);
@@ -697,6 +706,7 @@ window.closeReviewModal = function(reviewId) {
   let modalId = '';
   if (reviewId === 'cafe-o-kobita') modalId = 'cafeOKobitaModal';
   else if (reviewId === 'cafe-at-calcutta') modalId = 'cafeAtCalcuttaModal';
+  else if (reviewId === 'peter-cat') modalId = 'peterCatModal';
 
   if (modalId) {
     const modal = document.getElementById(modalId);
