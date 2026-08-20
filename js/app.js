@@ -460,8 +460,8 @@ window.initGoogleMap = function() {
       location: { lat: 22.5697, lng: 88.3512 },
       neighborhood: "Dacres Lane / Esplanade",
       type: "Historic Street Food Lane",
-      mustTry: "Chicken Stew & Buttered Toast",
-      rating: "★ 4.7"
+      mustTry: "Chicken Stew & Fabled Buttered Toast",
+      rating: "★ 4.4"
     },
     {
       title: "Flurys Tearoom",
@@ -693,6 +693,7 @@ window.openReviewModal = function(reviewId) {
   else if (reviewId === 'cafe-at-calcutta') modalId = 'cafeAtCalcuttaModal';
   else if (reviewId === 'peter-cat') modalId = 'peterCatModal';
   else if (reviewId === 'mitra-cafe') modalId = 'mitraCafeModal';
+  else if (reviewId === 'chitto-babur-dokan') modalId = 'chittoBaburDokanModal';
 
   if (modalId) {
     const modal = document.getElementById(modalId);
@@ -709,6 +710,7 @@ window.closeReviewModal = function(reviewId) {
   else if (reviewId === 'cafe-at-calcutta') modalId = 'cafeAtCalcuttaModal';
   else if (reviewId === 'peter-cat') modalId = 'peterCatModal';
   else if (reviewId === 'mitra-cafe') modalId = 'mitraCafeModal';
+  else if (reviewId === 'chitto-babur-dokan') modalId = 'chittoBaburDokanModal';
 
   if (modalId) {
     const modal = document.getElementById(modalId);

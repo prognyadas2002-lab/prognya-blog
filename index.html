@@ -204,25 +204,25 @@
         </article>
 
         <!-- Card 3: Chitto Babur Dokan (Esplanade / Dacres / Central Kolkata) -->
-        <article class="restaurant-card" data-neighborhood="esplanade new-market central-kolkata" data-price="budget affordable ₹" data-vibe="traditional-heritage">
+        <article class="restaurant-card" data-neighborhood="esplanade new-market central-kolkata" data-price="budget affordable ₹ ₹150-₹300" data-vibe="traditional-heritage">
           <div class="card-image-wrap">
-            <img src="assets/images/dacres_lane_stew.jpg" alt="Dacres Lane Stew">
+            <img src="assets/images/chitto_babur_dokan.jpg" alt="Chitto Babur Dokan Decker's Lane Buttered Toast and Chicken Stew">
             <div class="card-top-badges">
-              <span class="badge badge-terracotta">Esplanade / Dacres</span>
-              <span class="star-rating">★ 4.7</span>
+              <span class="badge badge-terracotta">ESPLANADE / DACRES</span>
+              <span class="star-rating">★ 4.4</span>
             </div>
           </div>
           <div class="card-body">
             <div class="card-meta">
               <span>Historic Street Food Lane</span>
-              <span style="font-weight: 700; color: var(--accent-terracotta);">₹</span>
+              <span style="font-weight: 700; color: var(--accent-terracotta);">₹150–₹300</span>
             </div>
             <h3 class="card-title">Chitto Babur Dokan</h3>
-            <div class="must-try-tag">⭐ Must-Try: Chicken Stew & Buttered Toast</div>
-            <p>Legendary office-goers breakfast joint serving rich, aromatic spiced chicken stew paired with thick buttered crusts.</p>
+            <div class="must-try-tag">⭐ Must-Try: Chicken Stew & Fabled Buttered Toast</div>
+            <p>Decker’s Lane is Kolkata’s legendary Office Para street food hub. Famous for thick flame-toasted buttered pauruti, home-style Chicken Stew, and crispy Bhetki Fish Fry.</p>
             <div class="card-footer">
-              <span style="font-size: 0.85rem; color: var(--text-muted);">Value: 10/10</span>
-              <a href="#recreate" class="btn btn-sm btn-outline">Read Review →</a>
+              <span style="font-size: 0.85rem; color: var(--text-muted);">Food Rating: 4.4/5</span>
+              <button class="btn btn-sm btn-outline" onclick="openReviewModal('chitto-babur-dokan')">Read Review →</button>
             </div>
           </div>
         </article>
@@ -1069,6 +1069,71 @@
 
       <div style="margin-top: 2rem; text-align: center;">
         <button class="btn btn-outline" onclick="closeReviewModal('mitra-cafe')">← Close Review</button>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ==========================================================================
+       FULL REVIEW ARTICLE MODAL: CHITTO BABUR DOKAN
+       ========================================================================== -->
+  <div class="modal-overlay" id="chittoBaburDokanModal">
+    <div class="modal-container" style="max-width: 780px; padding: 2.5rem 2rem; max-height: 90vh; overflow-y: auto;">
+      <button class="modal-close-btn" onclick="closeReviewModal('chitto-babur-dokan')">×</button>
+      
+      <!-- Article Header -->
+      <div style="margin-bottom: 1.5rem; border-bottom: 2px solid var(--border-sand-light); padding-bottom: 1.25rem;">
+        <span class="badge badge-terracotta" style="margin-bottom: 0.5rem;">Decker’s Lane, Esplanade • Central Kolkata</span>
+        <h1 style="color: var(--brand-burgundy); font-family: var(--font-heading); font-size: clamp(1.4rem, 2.5vw, 1.85rem); margin-top: 0.35rem; margin-bottom: 0.75rem;">Kolkata’s Culinary Icon: Discovering Chitto Babur Dokan at Decker’s Lane</h1>
+        
+        <div style="display: flex; flex-wrap: wrap; gap: 1rem; align-items: center; font-size: 0.9rem; color: var(--text-muted); background: var(--bg-secondary); padding: 0.75rem 1rem; border-radius: var(--radius-sm);">
+          <span>📍 <strong>Location:</strong> James Hicky Sarani (Decker’s Lane), Esplanade</span>
+          <span>🏛️ <strong>Vibe:</strong> High-energy ‘Office Para’ street food alley</span>
+          <span>⭐ <strong>Food Rating:</strong> 4.4 / 5</span>
+          <span>💰 <strong>Cost for Two:</strong> ₹150 – ₹300 (Approx.)</span>
+        </div>
+      </div>
+
+      <!-- Featured Image -->
+      <div style="width: 100%; height: 320px; border-radius: var(--radius-md); overflow: hidden; margin-bottom: 1.75rem; box-shadow: var(--shadow-sm);">
+        <img src="assets/images/chitto_babur_dokan.jpg" alt="Chitto Babur Dokan Decker's Lane Buttered Toast and Chicken Stew" style="width: 100%; height: 100%; object-fit: cover;">
+      </div>
+
+      <!-- Article Body Content -->
+      <div class="review-article-body" style="font-size: 1.05rem; line-height: 1.75; color: var(--text-espresso);">
+        <p style="margin-bottom: 1.5rem;">Decker’s Lane, now James Hicky Sarani, is a narrow, bustling alley off Esplanade, tucked away in the heart of Kolkata’s legendary ‘Office Para’ (the central business district). For decades, this lane has been the go-to gastronomic hub for thousands of office-goers, and no single stall encapsulates this spirit more famously than <strong>Chitto Babur Dokan</strong>.</p>
+
+        <h3 style="color: var(--brand-burgundy); font-family: var(--font-heading); margin: 1.75rem 0 1rem; font-size: 1.3rem; border-left: 3px solid var(--accent-terracotta); padding-left: 0.75rem;">What to Order: The Essence of Comfort Food</h3>
+
+        <div style="margin-bottom: 1.25rem;">
+          <h4 style="color: var(--accent-terracotta); font-family: var(--font-heading); font-size: 1.1rem; margin-bottom: 0.35rem;">🍞 The Fabled Bread Toast</h4>
+          <p style="margin: 0;">This isn’t just toast; it’s a Decker’s Lane institution. Thick slices of soft, <em>pauruti</em> (local white bread) are generously toasted, usually over an open flame, slathered with a rich layer of melting butter, and finished with a rustic sprinkle of black pepper. It’s comforting, satisfying, and deeply nostalgic.</p>
+        </div>
+
+        <div style="margin-bottom: 1.25rem;">
+          <h4 style="color: var(--accent-terracotta); font-family: var(--font-heading); font-size: 1.1rem; margin-bottom: 0.35rem;">🍲 Chicken Stew</h4>
+          <p style="margin: 0;">A legendary dish that is the epitome of home-style comfort. It’s a mild, flavorful stew packed with vegetables like papaya and carrots, and tender chicken pieces, often paired with the aforementioned toast for a fulfilling breakfast or lunch.</p>
+        </div>
+
+        <div style="margin-bottom: 1.5rem;">
+          <h4 style="color: var(--accent-terracotta); font-family: var(--font-heading); font-size: 1.1rem; margin-bottom: 0.35rem;">🐟 Fish Fry & Cutlets</h4>
+          <p style="margin: 0;">For those seeking a classic Kolkata evening snack, they offer crispy, golden bhetki fish fries and cutlets, served hot with <em>kasundi</em> (mustard sauce) and sliced onions.</p>
+        </div>
+
+        <!-- Quick Guide & Logistics Callout Box -->
+        <div style="background: var(--bg-secondary); border-left: 4px solid var(--accent-terracotta); border-radius: var(--radius-md); padding: 1.5rem; margin-top: 2rem;">
+          <h3 style="color: var(--brand-burgundy); font-family: var(--font-heading); margin-bottom: 0.75rem; font-size: 1.2rem;">Quick Guide & Logistics</h3>
+          <ul style="list-style: none; padding: 0; margin: 0; display: grid; gap: 0.6rem; font-size: 0.98rem;">
+            <li>📍 <strong>Location:</strong> James Hicky Sarani (Decker’s Lane), Esplanade, Kolkata (nearest Metro: Esplanade)</li>
+            <li>🏛️ <strong>Vibe:</strong> A vibrant, chaotic street food alley with a vintage Kolkata charm; a quintessential high-energy ‘Office Para’ atmosphere.</li>
+            <li>💰 <strong>Cost for Two:</strong> ₹150 – ₹300 (Approx.)</li>
+            <li>⭐ <strong>Food Rating:</strong> 4.4 / 5</li>
+          </ul>
+        </div>
+      </div>
+
+      <div style="margin-top: 2rem; text-align: center;">
+        <button class="btn btn-outline" onclick="closeReviewModal('chitto-babur-dokan')">← Close Review</button>
       </div>
     </div>
   </div>
