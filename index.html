@@ -299,6 +299,30 @@
           </div>
         </article>
 
+        <!-- Card: Roastery Coffee House (Gariahat / South Kolkata) -->
+        <article class="restaurant-card" data-neighborhood="gariahat hindustan-park south-kolkata" data-price="moderate ₹₹ ₹700-₹1000" data-vibe="aesthetic-cozy fine-dining">
+          <div class="card-image-wrap">
+            <img src="assets/images/roastery_coffee_house.jpg" alt="Roastery Coffee House Gariahat">
+            <div class="card-top-badges">
+              <span class="badge badge-burgundy">GARIAHAT / SOUTH</span>
+              <span class="star-rating">★ 4.7</span>
+            </div>
+          </div>
+          <div class="card-body">
+            <div class="card-meta">
+              <span>Specialty Coffee & Heritage Patio</span>
+              <span style="font-weight: 700; color: var(--accent-terracotta);">₹700–₹1,000</span>
+            </div>
+            <h3 class="card-title">Roastery Coffee House</h3>
+            <div class="must-try-tag">⭐ Must-Try: Cranberry Espresso Tonic & Cardamom Latte</div>
+            <p>Tucked inside the heritage South India Club in Gariahat, Roastery Coffee House has redefined South Kolkata's specialty coffee scene with artisanal single-origin brews, gourmet sandwiches, and a lush courtyard patio.</p>
+            <div class="card-footer">
+              <span style="font-size: 0.85rem; color: var(--text-muted);">Food & Coffee: 4.7/5</span>
+              <button class="btn btn-sm btn-outline" onclick="openReviewModal('roastery-coffee-house')">Read Review →</button>
+            </div>
+          </div>
+        </article>
+
         <!-- Card 6: Arsalan Restaurant (Park Circus / East Kolkata) -->
         <article class="restaurant-card" data-neighborhood="park-circus east-kolkata" data-price="moderate ₹₹" data-vibe="family-friendly traditional-heritage">
           <div class="card-image-wrap">
@@ -1134,6 +1158,78 @@
 
       <div style="margin-top: 2rem; text-align: center;">
         <button class="btn btn-outline" onclick="closeReviewModal('chitto-babur-dokan')">← Close Review</button>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ==========================================================================
+       FULL REVIEW ARTICLE MODAL: ROASTERY COFFEE HOUSE
+       ========================================================================== -->
+  <div class="modal-overlay" id="roasteryCoffeeHouseModal">
+    <div class="modal-container" style="max-width: 780px; padding: 2.5rem 2rem; max-height: 90vh; overflow-y: auto;">
+      <button class="modal-close-btn" onclick="closeReviewModal('roastery-coffee-house')">×</button>
+      
+      <!-- Article Header -->
+      <div style="margin-bottom: 1.5rem; border-bottom: 2px solid var(--border-sand-light); padding-bottom: 1.25rem;">
+        <span class="badge badge-burgundy" style="margin-bottom: 0.5rem;">South India Club, Gariahat • South Kolkata</span>
+        <h1 style="color: var(--brand-burgundy); font-family: var(--font-heading); font-size: clamp(1.4rem, 2.5vw, 1.85rem); margin-top: 0.35rem; margin-bottom: 0.75rem;">A Coffee Connoisseur's Sanctuary: Roastery Coffee House, Gariahat</h1>
+        
+        <div style="display: flex; flex-wrap: wrap; gap: 1rem; align-items: center; font-size: 0.9rem; color: var(--text-muted); background: var(--bg-secondary); padding: 0.75rem 1rem; border-radius: var(--radius-sm);">
+          <span>📍 <strong>Location:</strong> South India Club, Gariahat / Hindustan Park</span>
+          <span>🏛️ <strong>Vibe:</strong> Heritage courtyard patio with cozy roastery space</span>
+          <span>⭐ <strong>Food & Coffee Rating:</strong> 4.7 / 5</span>
+          <span>💰 <strong>Approximate Cost:</strong> ₹700 – ₹1,000 for two</span>
+        </div>
+      </div>
+
+      <!-- Featured Image -->
+      <div style="width: 100%; height: 320px; border-radius: var(--radius-md); overflow: hidden; margin-bottom: 1.75rem; box-shadow: var(--shadow-sm);">
+        <img src="assets/images/roastery_coffee_house.jpg" alt="Roastery Coffee House Gariahat" style="width: 100%; height: 100%; object-fit: cover;">
+      </div>
+
+      <!-- Article Body Content -->
+      <div class="review-article-body" style="font-size: 1.05rem; line-height: 1.75; color: var(--text-espresso);">
+        <p style="margin-bottom: 1.25rem;">Tucked inside the serene lanes near Gariahat, <strong>Roastery Coffee House</strong> has completely redefined the specialty coffee culture in South Kolkata. Housed inside the heritage premises of the South India Club, this cafe—once frequented mainly by club members—is now a bustling haven open to every true coffee lover. It offers a distinctly premium, sophisticated ambiance that balances old-world Calcutta charm with contemporary craft roasting.</p>
+
+        <p style="margin-bottom: 1.5rem;">Forget ordering a generic espresso just for the caffeine kick; this space is meant for those who genuinely care about single-origin beans, roasting profiles, and artisanal brewing.</p>
+
+        <h3 style="color: var(--brand-burgundy); font-family: var(--font-heading); margin: 1.75rem 0 1rem; font-size: 1.3rem; border-left: 3px solid var(--accent-terracotta); padding-left: 0.75rem;">What to Order: Coffee & Gourmet Comforts</h3>
+
+        <div style="margin-bottom: 1.25rem;">
+          <h4 style="color: var(--accent-terracotta); font-family: var(--font-heading); font-size: 1.1rem; margin-bottom: 0.35rem;">☕ Cranberry Espresso Tonic</h4>
+          <p style="margin: 0;">A refreshing, tart, and punchy signature brew where the brisk acidity of cranberry juice meets a rich shot of espresso over ice.</p>
+        </div>
+
+        <div style="margin-bottom: 1.25rem;">
+          <h4 style="color: var(--accent-terracotta); font-family: var(--font-heading); font-size: 1.1rem; margin-bottom: 0.35rem;">🌿 Cardamom Latte</h4>
+          <p style="margin: 0;">Exceptionally smooth and fragrant, infused with the subtle warmth of fresh cardamom without overpowering the delicate espresso notes.</p>
+        </div>
+
+        <div style="margin-bottom: 1.25rem;">
+          <h4 style="color: var(--accent-terracotta); font-family: var(--font-heading); font-size: 1.1rem; margin-bottom: 0.35rem;">🍫 Winter Special Hot Chocolate with Fudge</h4>
+          <p style="margin: 0;">A decadent, velvety cup packed with melted chocolate fudge—rich enough to feel like a dessert in a mug.</p>
+        </div>
+
+        <div style="margin-bottom: 1.5rem;">
+          <h4 style="color: var(--accent-terracotta); font-family: var(--font-heading); font-size: 1.1rem; margin-bottom: 0.35rem;">🥪 Customized Healthy Sandwiches</h4>
+          <p style="margin: 0;">Served on wholesome multigrain bread with fresh sprouts on the side, miles ahead of commercial fast-food subs. Pair them with guilt-free, crispy air-fried fries.</p>
+        </div>
+
+        <!-- Quick Guide & Logistics Callout Box -->
+        <div style="background: var(--bg-secondary); border-left: 4px solid var(--accent-terracotta); border-radius: var(--radius-md); padding: 1.5rem; margin-top: 2rem;">
+          <h3 style="color: var(--brand-burgundy); font-family: var(--font-heading); margin-bottom: 0.75rem; font-size: 1.2rem;">Quick Guide & Logistics</h3>
+          <ul style="list-style: none; padding: 0; margin: 0; display: grid; gap: 0.6rem; font-size: 0.98rem;">
+            <li>📍 <strong>Location:</strong> South India Club, Gariahat / Hindustan Park, South Kolkata</li>
+            <li>🏛️ <strong>Vibe:</strong> Heritage courtyard patio with a cozy, polished indoor roastery space</li>
+            <li>💰 <strong>Approximate Cost:</strong> ₹700 – ₹1,000 for two people</li>
+            <li>⭐ <strong>Food & Coffee Rating:</strong> 4.7 / 5</li>
+          </ul>
+        </div>
+      </div>
+
+      <div style="margin-top: 2rem; text-align: center;">
+        <button class="btn btn-outline" onclick="closeReviewModal('roastery-coffee-house')">← Close Review</button>
       </div>
     </div>
   </div>

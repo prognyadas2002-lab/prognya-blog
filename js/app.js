@@ -518,6 +518,14 @@ window.initGoogleMap = function() {
       type: "Heritage Colonial Dining",
       mustTry: "Mutton Rogan Josh & Chelo Kebab",
       rating: "★ 3.8"
+    },
+    {
+      title: "Roastery Coffee House",
+      location: { lat: 22.5185, lng: 88.3662 },
+      neighborhood: "Gariahat / Hindustan Park",
+      type: "Specialty Coffee & Heritage Patio",
+      mustTry: "Cranberry Espresso Tonic & Cardamom Latte",
+      rating: "★ 4.7"
     }
   ];
 
@@ -694,6 +702,7 @@ window.openReviewModal = function(reviewId) {
   else if (reviewId === 'peter-cat') modalId = 'peterCatModal';
   else if (reviewId === 'mitra-cafe') modalId = 'mitraCafeModal';
   else if (reviewId === 'chitto-babur-dokan') modalId = 'chittoBaburDokanModal';
+  else if (reviewId === 'roastery-coffee-house') modalId = 'roasteryCoffeeHouseModal';
 
   if (modalId) {
     const modal = document.getElementById(modalId);
@@ -711,6 +720,7 @@ window.closeReviewModal = function(reviewId) {
   else if (reviewId === 'peter-cat') modalId = 'peterCatModal';
   else if (reviewId === 'mitra-cafe') modalId = 'mitraCafeModal';
   else if (reviewId === 'chitto-babur-dokan') modalId = 'chittoBaburDokanModal';
+  else if (reviewId === 'roastery-coffee-house') modalId = 'roasteryCoffeeHouseModal';
 
   if (modalId) {
     const modal = document.getElementById(modalId);
