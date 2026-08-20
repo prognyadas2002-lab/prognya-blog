@@ -472,12 +472,12 @@ window.initGoogleMap = function() {
       rating: "★ 4.6"
     },
     {
-      title: "Kewpie’s Kitchen",
-      location: { lat: 22.5385, lng: 88.3524 },
+      title: "Aami Bangali",
+      location: { lat: 22.5285, lng: 88.3650 },
       neighborhood: "Ballygunge",
-      type: "Authentic Bengali Thali",
-      mustTry: "Grand Zamindari Thali & Daab Chingri",
-      rating: "★ 4.8"
+      type: "Authentic Ghoti & Bangal Cuisine",
+      mustTry: "Kochupata Bhapa Chingri & Chital Muitha",
+      rating: "★ 4.3"
     },
     {
       title: "Mitra Café",
@@ -703,6 +703,7 @@ window.openReviewModal = function(reviewId) {
   else if (reviewId === 'mitra-cafe') modalId = 'mitraCafeModal';
   else if (reviewId === 'chitto-babur-dokan') modalId = 'chittoBaburDokanModal';
   else if (reviewId === 'roastery-coffee-house') modalId = 'roasteryCoffeeHouseModal';
+  else if (reviewId === 'aami-bangali') modalId = 'aamiBangaliModal';
 
   if (modalId) {
     const modal = document.getElementById(modalId);
@@ -721,6 +722,7 @@ window.closeReviewModal = function(reviewId) {
   else if (reviewId === 'mitra-cafe') modalId = 'mitraCafeModal';
   else if (reviewId === 'chitto-babur-dokan') modalId = 'chittoBaburDokanModal';
   else if (reviewId === 'roastery-coffee-house') modalId = 'roasteryCoffeeHouseModal';
+  else if (reviewId === 'aami-bangali') modalId = 'aamiBangaliModal';
 
   if (modalId) {
     const modal = document.getElementById(modalId);
