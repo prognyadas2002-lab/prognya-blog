@@ -180,25 +180,25 @@
         </article>
 
         <!-- Card 2: Mitra Café (Sovabazar / North Kolkata) -->
-        <article class="restaurant-card" data-neighborhood="sovabazar hatibagan north-kolkata" data-price="budget affordable ₹" data-vibe="traditional-heritage">
+        <article class="restaurant-card" data-neighborhood="sovabazar hatibagan north-kolkata" data-price="budget affordable ₹ ₹200-₹400" data-vibe="traditional-heritage">
           <div class="card-image-wrap">
-            <img src="assets/images/dacres_lane_stew.jpg" alt="Mitra Cafe Sovabazar">
+            <img src="assets/images/mitra_cafe.jpg" alt="Mitra Cafe Sovabazar Bhetki Fry and Brain Chop">
             <div class="card-top-badges">
-              <span class="badge badge-terracotta">Sovabazar / North</span>
-              <span class="star-rating">★ 4.9</span>
+              <span class="badge badge-terracotta">SOVABAZAR / NORTH</span>
+              <span class="star-rating">★ 4.6</span>
             </div>
           </div>
           <div class="card-body">
             <div class="card-meta">
               <span>100-Year North Cabin Legend</span>
-              <span style="font-weight: 700; color: var(--accent-terracotta);">₹</span>
+              <span style="font-weight: 700; color: var(--accent-terracotta);">₹200–₹400</span>
             </div>
             <h3 class="card-title">Mitra Café</h3>
-            <div class="must-try-tag">⭐ Must-Try: Fish Diamond Fry & Brain Chop</div>
-            <p>Century-old North Kolkata cabin famous for crisp, golden Bhetki cutlets and legendary crispy evening snacks.</p>
+            <div class="must-try-tag">⭐ Must-Try: Original Bhetki Fish Fry & Mutton Brain Chop</div>
+            <p>Stepping into Mitra Cafe outside Shovabazar Metro feels like stepping into old-world Kolkata. Iconic century-old cabin famous for Bhetki Fish Fry, Brain Chop, and Caramel Pudding.</p>
             <div class="card-footer">
-              <span style="font-size: 0.85rem; color: var(--text-muted);">Heritage: 10/10</span>
-              <a href="#recreate" class="btn btn-sm btn-outline">Read Review →</a>
+              <span style="font-size: 0.85rem; color: var(--text-muted);">Food Rating: 4.6/5</span>
+              <button class="btn btn-sm btn-outline" onclick="openReviewModal('mitra-cafe')">Read Review →</button>
             </div>
           </div>
         </article>
@@ -1004,6 +1004,71 @@
 
       <div style="margin-top: 2rem; text-align: center;">
         <button class="btn btn-outline" onclick="closeReviewModal('peter-cat')">← Close Review</button>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ==========================================================================
+       FULL REVIEW ARTICLE MODAL: MITRA CAFE
+       ========================================================================== -->
+  <div class="modal-overlay" id="mitraCafeModal">
+    <div class="modal-container" style="max-width: 780px; padding: 2.5rem 2rem; max-height: 90vh; overflow-y: auto;">
+      <button class="modal-close-btn" onclick="closeReviewModal('mitra-cafe')">×</button>
+      
+      <!-- Article Header -->
+      <div style="margin-bottom: 1.5rem; border-bottom: 2px solid var(--border-sand-light); padding-bottom: 1.25rem;">
+        <span class="badge badge-terracotta" style="margin-bottom: 0.5rem;">Near Shovabazar Metro Station • North Kolkata</span>
+        <h1 style="color: var(--brand-burgundy); font-family: var(--font-heading); font-size: clamp(1.4rem, 2.5vw, 1.85rem); margin-top: 0.35rem; margin-bottom: 0.75rem;">A Century of Flavor: Reliving North Kolkata’s Cabin Culture at Mitra Cafe</h1>
+        
+        <div style="display: flex; flex-wrap: wrap; gap: 1rem; align-items: center; font-size: 0.9rem; color: var(--text-muted); background: var(--bg-secondary); padding: 0.75rem 1rem; border-radius: var(--radius-sm);">
+          <span>📍 <strong>Location:</strong> Near Shovabazar Metro Station (Gate No. 1)</span>
+          <span>🏛️ <strong>Vibe:</strong> Heritage Kolkata cabin culture</span>
+          <span>⭐ <strong>Food Rating:</strong> 4.6 / 5</span>
+          <span>💰 <strong>Approximate Cost:</strong> ₹200 – ₹400 for two</span>
+        </div>
+      </div>
+
+      <!-- Featured Image -->
+      <div style="width: 100%; height: 320px; border-radius: var(--radius-md); overflow: hidden; margin-bottom: 1.75rem; box-shadow: var(--shadow-sm);">
+        <img src="assets/images/mitra_cafe.jpg" alt="Mitra Cafe Sovabazar Bhetki Fry and Brain Chop" style="width: 100%; height: 100%; object-fit: cover;">
+      </div>
+
+      <!-- Article Body Content -->
+      <div class="review-article-body" style="font-size: 1.05rem; line-height: 1.75; color: var(--text-espresso);">
+        <p style="margin-bottom: 1.5rem;">Stepping into Mitra Cafe feels like stepping right into the beating heart of old-world Kolkata. Perched right outside the Shovabazar Metro Station (Gate No. 1), this iconic eatery has been serving culinary nostalgia for over a hundred years. While the space recently underwent a thoughtful renovation, it hasn't traded away its soul—the classic Kolkata cabin charm, vintage aesthetics, and buzzing evening energy remain completely intact.</p>
+
+        <h3 style="color: var(--brand-burgundy); font-family: var(--font-heading); margin: 1.75rem 0 1rem; font-size: 1.3rem; border-left: 3px solid var(--accent-terracotta); padding-left: 0.75rem;">What to Order: The Must-Tries</h3>
+
+        <div style="margin-bottom: 1.25rem;">
+          <h4 style="color: var(--accent-terracotta); font-family: var(--font-heading); font-size: 1.1rem; margin-bottom: 0.35rem;">🐟 Original Bhetki Fish Fry</h4>
+          <p style="margin: 0;">The crown jewel of Mitra Cafe’s evening snacks. Unlike modern iterations that skimp on quality, they use thick, pure Calcutta Bhetki fillets encased in a light, crisp breadcrumb crust. Paired with sharp <em>kasundi</em> (mustard sauce) and fresh onion salad, it is flaky, aromatic, and unmatched in North Kolkata.</p>
+        </div>
+
+        <div style="margin-bottom: 1.25rem;">
+          <h4 style="color: var(--accent-terracotta); font-family: var(--font-heading); font-size: 1.1rem; margin-bottom: 0.35rem;">🍖 Mutton Brain Chop</h4>
+          <p style="margin: 0;">A rare delicacy for adventurous meat lovers. It features spiced, rich goat brain with a melt-in-the-mouth, buttery texture on the inside, sharply contrasted by a crunchy crumb coating on the outside. It is rich, fatty, and deeply savory—an absolute treat if you love red meat delicacies (though best skipped if you prefer lighter bites).</p>
+        </div>
+
+        <div style="margin-bottom: 1.5rem;">
+          <h4 style="color: var(--accent-terracotta); font-family: var(--font-heading); font-size: 1.1rem; margin-bottom: 0.35rem;">🍮 Classic Caramel Custard / Pudding</h4>
+          <p style="margin: 0;">Mitra Cafe’s best-kept dessert secret. Silky, subtle, and perfectly caramelized, this old-school pudding sells out almost as soon as it hits the counter. Make sure to visit early in the evening if you want to secure a portion.</p>
+        </div>
+
+        <!-- Quick Guide & Logistics Callout Box -->
+        <div style="background: var(--bg-secondary); border-left: 4px solid var(--accent-terracotta); border-radius: var(--radius-md); padding: 1.5rem; margin-top: 2rem;">
+          <h3 style="color: var(--brand-burgundy); font-family: var(--font-heading); margin-bottom: 0.75rem; font-size: 1.2rem;">Quick Guide & Logistics</h3>
+          <ul style="list-style: none; padding: 0; margin: 0; display: grid; gap: 0.6rem; font-size: 0.98rem;">
+            <li>📍 <strong>Location:</strong> Near Shovabazar Metro Station (Gate No. 1, North Kolkata)</li>
+            <li>🏛️ <strong>Vibe:</strong> Heritage Kolkata cabin culture with vibrant, nostalgic decor</li>
+            <li>💰 <strong>Approximate Cost:</strong> ₹200 – ₹400 for two people</li>
+            <li>⭐ <strong>Food Rating:</strong> 4.6 / 5</li>
+          </ul>
+        </div>
+      </div>
+
+      <div style="margin-top: 2rem; text-align: center;">
+        <button class="btn btn-outline" onclick="closeReviewModal('mitra-cafe')">← Close Review</button>
       </div>
     </div>
   </div>

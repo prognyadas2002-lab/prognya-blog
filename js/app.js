@@ -484,8 +484,8 @@ window.initGoogleMap = function() {
       location: { lat: 22.5982, lng: 88.3680 },
       neighborhood: "Sovabazar",
       type: "100-Year North Cabin Legend",
-      mustTry: "Fish Diamond Fry & Brain Chop",
-      rating: "★ 4.9"
+      mustTry: "Original Bhetki Fish Fry & Mutton Brain Chop",
+      rating: "★ 4.6"
     },
     {
       title: "The Salt House Lounge",
@@ -692,6 +692,7 @@ window.openReviewModal = function(reviewId) {
   if (reviewId === 'cafe-o-kobita') modalId = 'cafeOKobitaModal';
   else if (reviewId === 'cafe-at-calcutta') modalId = 'cafeAtCalcuttaModal';
   else if (reviewId === 'peter-cat') modalId = 'peterCatModal';
+  else if (reviewId === 'mitra-cafe') modalId = 'mitraCafeModal';
 
   if (modalId) {
     const modal = document.getElementById(modalId);
@@ -707,6 +708,7 @@ window.closeReviewModal = function(reviewId) {
   if (reviewId === 'cafe-o-kobita') modalId = 'cafeOKobitaModal';
   else if (reviewId === 'cafe-at-calcutta') modalId = 'cafeAtCalcuttaModal';
   else if (reviewId === 'peter-cat') modalId = 'peterCatModal';
+  else if (reviewId === 'mitra-cafe') modalId = 'mitraCafeModal';
 
   if (modalId) {
     const modal = document.getElementById(modalId);
