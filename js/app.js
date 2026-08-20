@@ -468,8 +468,8 @@ window.initGoogleMap = function() {
       location: { lat: 22.5538, lng: 88.3528 },
       neighborhood: "Park Street",
       type: "Swiss Confectionery Since 1927",
-      mustTry: "Full English Breakfast & Rum Balls",
-      rating: "★ 4.6"
+      mustTry: "Full English Breakfast & Rich Rum Balls",
+      rating: "★ 4.1"
     },
     {
       title: "Aami Bangali",
@@ -704,6 +704,7 @@ window.openReviewModal = function(reviewId) {
   else if (reviewId === 'chitto-babur-dokan') modalId = 'chittoBaburDokanModal';
   else if (reviewId === 'roastery-coffee-house') modalId = 'roasteryCoffeeHouseModal';
   else if (reviewId === 'aami-bangali') modalId = 'aamiBangaliModal';
+  else if (reviewId === 'flurys-tearoom' || reviewId === 'flurys') modalId = 'flurysTearoomModal';
 
   if (modalId) {
     const modal = document.getElementById(modalId);
@@ -723,6 +724,7 @@ window.closeReviewModal = function(reviewId) {
   else if (reviewId === 'chitto-babur-dokan') modalId = 'chittoBaburDokanModal';
   else if (reviewId === 'roastery-coffee-house') modalId = 'roasteryCoffeeHouseModal';
   else if (reviewId === 'aami-bangali') modalId = 'aamiBangaliModal';
+  else if (reviewId === 'flurys-tearoom' || reviewId === 'flurys') modalId = 'flurysTearoomModal';
 
   if (modalId) {
     const modal = document.getElementById(modalId);

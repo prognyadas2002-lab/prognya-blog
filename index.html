@@ -228,25 +228,25 @@
         </article>
 
         <!-- Card 4: Flurys Tearoom (Park Street / Central Kolkata) -->
-        <article class="restaurant-card" data-neighborhood="park-street central-kolkata" data-price="moderate ₹₹" data-vibe="aesthetic-cozy traditional-heritage">
+        <article class="restaurant-card" data-neighborhood="park-street central-kolkata" data-price="moderate ₹₹ ₹1200-₹2000" data-vibe="aesthetic-cozy traditional-heritage">
           <div class="card-image-wrap">
-            <img src="assets/images/flurys_high_tea.jpg" alt="Flurys Tearoom">
+            <img src="assets/images/flurys_tearoom.jpg" alt="Flurys Tearoom Park Street Full English Breakfast and Rum Ball">
             <div class="card-top-badges">
-              <span class="badge badge-burgundy">Park Street</span>
-              <span class="star-rating">★ 4.6</span>
+              <span class="badge badge-burgundy">PARK STREET</span>
+              <span class="star-rating">★ 4.1</span>
             </div>
           </div>
           <div class="card-body">
             <div class="card-meta">
               <span>Swiss Confectionery Since 1927</span>
-              <span style="font-weight: 700; color: var(--accent-terracotta);">₹₹</span>
+              <span style="font-weight: 700; color: var(--accent-terracotta);">₹1,200–₹2,000</span>
             </div>
             <h3 class="card-title">Flurys Tearoom</h3>
-            <div class="must-try-tag">⭐ Must-Try: Full English Breakfast & Rum Balls</div>
-            <p>Kolkata's quintessential Sunday breakfast spot offering nostalgic pastries, hot tea, and heritage window seats.</p>
+            <div class="must-try-tag">⭐ Must-Try: Full English Breakfast & Decadent Rum Balls</div>
+            <p>Founded in 1927, stepping past Flurys' signature pink facade on Park Street feels like walking into old-world Calcutta. Iconic for its Full English Breakfast, brewed coffee, and decadent Rum Balls.</p>
             <div class="card-footer">
-              <span style="font-size: 0.85rem; color: var(--text-muted);">Ambiance: 9.4/10</span>
-              <a href="#recreate" class="btn btn-sm btn-outline">Read Review →</a>
+              <span style="font-size: 0.85rem; color: var(--text-muted);">Personal Rating: 4.1/5</span>
+              <button class="btn btn-sm btn-outline" onclick="openReviewModal('flurys-tearoom')">Read Review →</button>
             </div>
           </div>
         </article>
@@ -1307,6 +1307,58 @@
 
       <div style="margin-top: 2rem; text-align: center;">
         <button class="btn btn-outline" onclick="closeReviewModal('aami-bangali')">← Close Review</button>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ==========================================================================
+       FULL REVIEW ARTICLE MODAL: FLURYS TEAROOM
+       ========================================================================== -->
+  <div class="modal-overlay" id="flurysTearoomModal">
+    <div class="modal-container" style="max-width: 780px; padding: 2.5rem 2rem; max-height: 90vh; overflow-y: auto;">
+      <button class="modal-close-btn" onclick="closeReviewModal('flurys-tearoom')">×</button>
+      
+      <!-- Article Header -->
+      <div style="margin-bottom: 1.5rem; border-bottom: 2px solid var(--border-sand-light); padding-bottom: 1.25rem;">
+        <span class="badge badge-burgundy" style="margin-bottom: 0.5rem;">Park Street • Central Kolkata</span>
+        <h1 style="color: var(--brand-burgundy); font-family: var(--font-heading); font-size: clamp(1.4rem, 2.5vw, 1.85rem); margin-top: 0.35rem; margin-bottom: 0.75rem;">A Heritage Morning on Park Street: My Experience at Flurys</h1>
+        
+        <div style="display: flex; flex-wrap: wrap; gap: 1rem; align-items: center; font-size: 0.9rem; color: var(--text-muted); background: var(--bg-secondary); padding: 0.75rem 1rem; border-radius: var(--radius-sm);">
+          <span>📍 <strong>Location:</strong> Park Street, Kolkata</span>
+          <span>🏛️ <strong>Vibe:</strong> Vintage tearoom charm with lively Park Street views</span>
+          <span>⭐ <strong>Personal Rating:</strong> 4.1 / 5</span>
+          <span>💰 <strong>Average Cost:</strong> ₹1,200 – ₹2,000 for two</span>
+        </div>
+      </div>
+
+      <!-- Featured Image -->
+      <div style="width: 100%; height: 320px; border-radius: var(--radius-md); overflow: hidden; margin-bottom: 1.75rem; box-shadow: var(--shadow-sm);">
+        <img src="assets/images/flurys_tearoom.jpg" alt="Flurys Tearoom Park Street Full English Breakfast and Rum Ball" style="width: 100%; height: 100%; object-fit: cover;">
+      </div>
+
+      <!-- Article Body Content -->
+      <div class="review-article-body" style="font-size: 1.05rem; line-height: 1.75; color: var(--text-espresso);">
+        <p style="margin-bottom: 1.25rem;">Few places capture the timeless soul of Kolkata quite like <strong>Flurys on Park Street</strong>. Founded in 1927 by Joseph and Freida Flury, this iconic tearoom introduced the city to authentic European confections and classic English dining. Nearly a century later, stepping past its signature pink facade still feels like walking right into old-world Calcutta.</p>
+
+        <p style="margin-bottom: 1.25rem;">A while back, I stopped by to indulge in their legendary <strong>Full English Breakfast</strong>. Flurys is renowned across the city for this morning spread, and pairing it with a rich, freshly brewed cup of coffee sets the perfect tone for a slow morning.</p>
+
+        <p style="margin-bottom: 1.5rem;">Of course, no visit to Flurys is complete without their signature bakery treats—specifically, the <strong>Rum Ball</strong>. I have always had a soft spot for the classic rum balls at Nahoum's in New Market, which holds its own historic charm. However, the version at Flurys hits differently: it feels distinctly richer, decadent, and premium in texture and flavor, easily making it one of the best in town.</p>
+
+        <!-- Key Details for Your Visit Callout Box -->
+        <div style="background: var(--bg-secondary); border-left: 4px solid var(--accent-terracotta); border-radius: var(--radius-md); padding: 1.5rem; margin-top: 2rem;">
+          <h3 style="color: var(--brand-burgundy); font-family: var(--font-heading); margin-bottom: 0.75rem; font-size: 1.2rem;">Key Details for Your Visit</h3>
+          <ul style="list-style: none; padding: 0; margin: 0; display: grid; gap: 0.6rem; font-size: 0.98rem;">
+            <li>💰 <strong>Average Cost:</strong> Expect to spend around ₹1,200 to ₹2,000 for two, depending on your order. The classic English breakfast platter alone generally runs above ₹1,000–₹1,200.</li>
+            <li>⭐ <strong>Must-Try Items:</strong> Full English Breakfast, freshly brewed coffee, Rum Balls, and traditional tea cakes.</li>
+            <li>🏛️ <strong>Vibe:</strong> Vintage tearoom charm with lively Park Street views.</li>
+            <li>⭐ <strong>Personal Rating:</strong> 4.1 / 5</li>
+          </ul>
+        </div>
+      </div>
+
+      <div style="margin-top: 2rem; text-align: center;">
+        <button class="btn btn-outline" onclick="closeReviewModal('flurys-tearoom')">← Close Review</button>
       </div>
     </div>
   </div>
